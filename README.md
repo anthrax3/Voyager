@@ -1,2 +1,1 @@
-# CMS
-CMS for ASP.NET
+Simple CMS for ASP.NET
