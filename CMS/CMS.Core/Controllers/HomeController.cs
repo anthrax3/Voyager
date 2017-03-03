@@ -1,4 +1,5 @@
-﻿using CMS.Core.Services;
+﻿using CMS.Core.DAL;
+using CMS.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace CMS.Core.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IConfigService cs, ILoggerService l)
+        public HomeController(IDatabaseContext c)
         {
 
         }
