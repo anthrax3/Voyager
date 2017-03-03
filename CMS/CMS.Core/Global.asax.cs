@@ -12,7 +12,7 @@ namespace CMS.Core
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        static readonly ILoggerService logger = new NLogLogger("MvcApplication");
+        static readonly ILoggerService logger = new NLogLogger();
         static readonly IConfigService config = new ConfigService(logger);
 
         protected void Application_Start()

@@ -8,13 +8,11 @@ namespace CMS.Core.Services.Implementations
 {
     public class NLogLogger : ILoggerService
     {
-        String currentClassName = String.Empty;
         Logger logger = null;
 
-        public NLogLogger(String currentClassName)
+        public NLogLogger()
         {
-            this.currentClassName = currentClassName;
-            this.logger = NLog.LogManager.GetLogger(currentClassName);
+            this.logger = NLog.LogManager.GetCurrentClassLogger();
         }
 
         public void Log(Level level, Exception ex)
