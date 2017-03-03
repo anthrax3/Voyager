@@ -9,7 +9,7 @@ namespace CMS.Core.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(ILoggerService l)
+        public HomeController(IConfigService cs, ILoggerService l)
         {
 
         }

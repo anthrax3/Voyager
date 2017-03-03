@@ -1,5 +1,7 @@
-﻿using CMS.Core.Services;
+﻿using CMS.Core.App_Start;
+using CMS.Core.Services;
 using CMS.Core.Services.Implementations;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +14,10 @@ namespace CMS.Core
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        static readonly ILoggerService logger = new NLogLogger();
-        static readonly IConfigService config = new ConfigService(logger);
+        static readonly ILoggerService logger = 
+            UnityConfig.GetConfiguredContainer().Resolve<ILoggerService>();
+        static readonly IConfigService config =
+            UnityConfig.GetConfiguredContainer().Resolve<IConfigService>();
 
         protected void Application_Start()
         {
