@@ -9,7 +9,7 @@ namespace CMS.Core.DAL
 {
     public interface IDatabaseContext
     {
-        bool IsConnected { get; set; }
+        bool IsConnected { get; }
 
         DbSet<TEntity> Get<TEntity>() where TEntity : class;
         int Save();
