@@ -10,6 +10,10 @@ namespace CMS.Core.Controllers
     {
         public ActionResult Index()
         {
+            NLog.LogManager.GetCurrentClassLogger().Log(NLog.LogLevel.Error, "test");
+            int a = 1;
+            int b = 0;
+            int c = a / b;
             return View();
         }
     }
