@@ -38,12 +38,14 @@ namespace CMS.Core.Services.Implementations
 
         public bool Exist(string key)
         {
-            throw new NotImplementedException();
+            return data.Any(p => p.Key == key);
         }
 
         public string GetValue(string key)
         {
-            throw new NotImplementedException();
+            if (!Exist(key))
+                throw new KeyNotFoundException(key);
+            return data.First(p => p.Key == key).Value;
         }
     }
 }
