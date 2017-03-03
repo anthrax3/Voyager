@@ -3,6 +3,7 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using CMS.Core.Services;
 using CMS.Core.Services.Implementations;
+using CMS.Core.DAL;
 
 namespace CMS.Core.App_Start
 {
@@ -34,8 +35,9 @@ namespace CMS.Core.App_Start
         /// change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            container.RegisterType<ILoggerService, NLogLogger>(new ContainerControlledLifetimeManager());
             container.RegisterType<IConfigService, ConfigService>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ILoggerService, NLogLogger>();
+            container.RegisterType<IDatabaseContext, DatabaseContext>();
         }
     }
 }
