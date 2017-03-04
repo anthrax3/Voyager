@@ -1,9 +1,8 @@
 using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
-using CMS.Core.Services;
-using CMS.Core.Services.Implementations;
 using CMS.Core.DAL;
+using CMS.Core.Services.ConfigService;
+using CMS.Core.Services.LoggerService;
 
 namespace CMS.Core.App_Start
 {

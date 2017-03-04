@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMS.Core.Services
+namespace CMS.Core.Services.ConfigService
 {
     public interface IConfigService
     {

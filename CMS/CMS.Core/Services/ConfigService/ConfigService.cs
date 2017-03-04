@@ -1,13 +1,11 @@
-﻿using CMS.Core.Services.ConfigService;
+﻿using CMS.Core.Services.LoggerService;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
-using System.Xml;
 using System.Xml.Linq;
 
-namespace CMS.Core.Services.Implementations
+namespace CMS.Core.Services.ConfigService
 {
     public class ConfigService : IConfigService
     {

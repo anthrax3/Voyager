@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using NLog;
 
-namespace CMS.Core.Services.Implementations
+namespace CMS.Core.Services.LoggerService
 {
     public class NLogLogger : ILoggerService
     {
