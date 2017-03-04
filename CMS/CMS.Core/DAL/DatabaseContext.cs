@@ -10,6 +10,9 @@ namespace CMS.Core.DAL
     {
         static String connectionStringCache = String.Empty;
 
+        /// <summary>
+        /// If connection with DB is open, returns true. Otherwise, returns false.
+        /// </summary>
         public bool IsConnected
         {
             get { return Database.Connection.State == System.Data.ConnectionState.Open ? true : false; }
@@ -50,6 +53,10 @@ namespace CMS.Core.DAL
             }
         }
 
+        /// <summary>
+        /// Save changes in DB. Returns -1 if there is no connection with DB, 
+        /// otherwise returns number of changed objects.
+        /// </summary>
         public int Save()
         {
             if (!IsConnected)
@@ -57,6 +64,9 @@ namespace CMS.Core.DAL
             return base.SaveChanges();
         }
 
+        /// <summary>
+        /// Get entity with specific TEntity type. Returns null if there is no connection with DB.
+        /// </summary>
         public DbSet<TEntity> Get<TEntity>() where TEntity : class
         {
             if (!IsConnected)

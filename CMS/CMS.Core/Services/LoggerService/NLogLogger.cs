@@ -15,12 +15,18 @@ namespace CMS.Core.Services.LoggerService
             this.logger = NLog.LogManager.GetCurrentClassLogger();
         }
 
+        /// <summary>
+        /// Log exception with specific level
+        /// </summary>
         public void Log(Level level, Exception ex)
         {
             LogLevel convertedLogLevel = ConvertToNLogFormatFromLevel(level);
             logger.Log(convertedLogLevel, ex);
         }
 
+        /// <summary>
+        /// Log message with specific level
+        /// </summary>
         public void Log(Level level, string message)
         {
             LogLevel convertedLogLevel = ConvertToNLogFormatFromLevel(level);

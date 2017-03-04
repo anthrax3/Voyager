@@ -19,6 +19,9 @@ namespace CMS.Core.Services.ConfigService
             data = new Dictionary<string, string>();
         }
 
+        /// <summary>
+        /// Load configuration data from file. Returns LoadResult.Success if there were no errors. 
+        /// </summary>
         public LoadResult Load(string file)
         {
             if (!File.Exists(file))
@@ -62,11 +65,17 @@ namespace CMS.Core.Services.ConfigService
             return LoadResult.Success;
         }
 
+        /// <summary>
+        /// Returns true if key exist.
+        /// </summary>
         public bool Exist(string key)
         {
             return data.Any(p => p.Key == key);
         }
 
+        /// <summary>
+        /// Returns value of specific key or null if key not exist.
+        /// </summary>
         public string GetValue(string key)
         {
             return data.FirstOrDefault(p => p.Key == key).Value;
