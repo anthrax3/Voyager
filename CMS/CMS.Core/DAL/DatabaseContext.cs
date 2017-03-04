@@ -1,5 +1,7 @@
-﻿using CMS.Core.Services.ConfigService;
+﻿using CMS.Core.DAL.Models;
+using CMS.Core.Services.ConfigService;
 using CMS.Core.Services.LoggerService;
+using Microsoft.Practices.Unity;
 using System;
 using System.Data.Entity;
 using System.Data.SqlClient;
@@ -10,6 +12,8 @@ namespace CMS.Core.DAL
     {
         static String connectionStringCache = String.Empty;
 
+        public DbSet<ConfigModel> configModel { get; set; }
+
         /// <summary>
         /// If connection with DB is open, returns true. Otherwise, returns false.
         /// </summary>
@@ -18,6 +22,12 @@ namespace CMS.Core.DAL
             get { return Database.Connection.State == System.Data.ConnectionState.Open ? true : false; }
         }
 
+        public DatabaseContext()
+        {
+
+        }
+
+        /*[InjectionConstructor]
         public DatabaseContext(IConfigService config, ILoggerService logger)
         {
             if(connectionStringCache == String.Empty)
@@ -49,9 +59,22 @@ namespace CMS.Core.DAL
             }
             catch(Exception ex)
             {
+                logger.Log(Level.Error, "Can't connect to database. Check your configuration and try again");
                 logger.Log(Level.Critical, ex);
             }
-        }
+            
+            try
+            {
+                Database.Initialize(false);
+            }
+            catch(Exception ex)
+            {
+                logger.Log(Level.Error, "Database schema is incorrect");
+                logger.Log(Level.Critical, ex);
+
+                Database.Connection.Close();
+            }
+        }*/
 
         /// <summary>
         /// Save changes in DB. Returns -1 if there is no connection with DB, 
