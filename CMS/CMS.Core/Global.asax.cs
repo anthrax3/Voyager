@@ -15,8 +15,8 @@ namespace CMS.Core
     {
         static readonly ILoggerService logger = 
             UnityConfig.GetConfiguredContainer().Resolve<ILoggerService>();
-        static readonly IConfigService config =
-            UnityConfig.GetConfiguredContainer().Resolve<IConfigService>();
+        static readonly IDBConfigService config =
+            UnityConfig.GetConfiguredContainer().Resolve<IDBConfigService>();
 
         protected void Application_Start()
         {

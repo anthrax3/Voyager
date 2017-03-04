@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CMS.Core.Services.ConfigService
 {
-    public interface IConfigService
+    public interface IDBConfigService
     {
         LoadResult Load(String file);
         bool Exist(String key);

@@ -27,8 +27,8 @@ namespace CMS.Core.DAL
 
         }
 
-        /*[InjectionConstructor]
-        public DatabaseContext(IConfigService config, ILoggerService logger)
+        [InjectionConstructor]
+        public DatabaseContext(IDBConfigService config, ILoggerService logger)
         {
             if(connectionStringCache == String.Empty)
             {
@@ -69,12 +69,12 @@ namespace CMS.Core.DAL
             }
             catch(Exception ex)
             {
-                logger.Log(Level.Error, "Database schema is incorrect");
+                logger.Log(Level.Error, "Database initialize error");
                 logger.Log(Level.Critical, ex);
 
                 Database.Connection.Close();
             }
-        }*/
+        }
 
         /// <summary>
         /// Save changes in DB. Returns -1 if there is no connection with DB, 

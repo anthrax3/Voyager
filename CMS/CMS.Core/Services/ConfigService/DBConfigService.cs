@@ -7,12 +7,12 @@ using System.Xml.Linq;
 
 namespace CMS.Core.Services.ConfigService
 {
-    public class ConfigService : IConfigService
+    public class DBConfigService : IDBConfigService
     {
         Dictionary<String, String> data = null;
         ILoggerService logger = null;
 
-        public ConfigService(ILoggerService logger)
+        public DBConfigService(ILoggerService logger)
         {
             this.logger = logger;
 
