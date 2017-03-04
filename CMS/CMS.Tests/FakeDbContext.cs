@@ -19,7 +19,7 @@ namespace CMS.Tests
 
         public int Save()
         {
-            return 1;
+            return 0;
         }
     }
 }

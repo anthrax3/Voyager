@@ -1,5 +1,5 @@
 ﻿using CMS.Core.DAL;
-using CMS.Core.DAL.Models;
+using CMS.Core.Models;
 using CMS.Core.Services.ConfigService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;

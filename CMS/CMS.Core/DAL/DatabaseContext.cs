@@ -1,4 +1,4 @@
-﻿using CMS.Core.DAL.Models;
+﻿using CMS.Core.Models;
 using CMS.Core.Services.ConfigService;
 using CMS.Core.Services.LoggerService;
 using Microsoft.Practices.Unity;
@@ -12,7 +12,8 @@ namespace CMS.Core.DAL
     {
         static String connectionStringCache = String.Empty;
 
-        public virtual DbSet<ConfigModel> ConfigModel { get; set; }
+        public virtual DbSet<ConfigModel> Config { get; set; }
+        public virtual DbSet<TemplateModel> Templates { get; set; }
 
         /// <summary>
         /// If connection with DB is open, returns true. Otherwise, returns false.

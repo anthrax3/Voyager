@@ -1,5 +1,5 @@
 ﻿using CMS.Core.DAL;
-using CMS.Core.DAL.Models;
+using CMS.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

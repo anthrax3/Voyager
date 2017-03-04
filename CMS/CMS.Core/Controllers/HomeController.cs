@@ -10,7 +10,7 @@ namespace CMS.Core.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IDatabaseContext c)
+        public HomeController()
         {
 
         }
