@@ -37,7 +37,7 @@ namespace CMS.Core.Services.Implementations
                 case (Level.Critical): return LogLevel.Fatal;
             }
 
-            return LogLevel.Debug;
+            return null;
         }
     }
 }

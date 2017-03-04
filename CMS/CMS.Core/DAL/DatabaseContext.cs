@@ -1,5 +1,4 @@
-﻿using CMS.Core.Exceptions;
-using CMS.Core.Services;
+﻿using CMS.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -56,14 +55,14 @@ namespace CMS.Core.DAL
         public int Save()
         {
             if (!IsConnected)
-                throw new NoDatabaseConnectionException();
+                return -1;
             return base.SaveChanges();
         }
 
         public DbSet<TEntity> Get<TEntity>() where TEntity : class
         {
             if (!IsConnected)
-                throw new NoDatabaseConnectionException();
+                return null;
             return base.Set<TEntity>();
         }
     }

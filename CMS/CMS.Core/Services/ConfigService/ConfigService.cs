@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMS.Core.Services.ConfigService;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,20 +21,47 @@ namespace CMS.Core.Services.Implementations
             data = new Dictionary<string, string>();
         }
 
-        public void Load(string file)
+        public LoadResult Load(string file)
         {
-            var xmlContent = new StreamReader(file).ReadToEnd();
-            var xmlDocument = XDocument.Parse(xmlContent);
-            var root = xmlDocument.Descendants("configuration");
-            var items = root.Descendants("item");
+            if (!File.Exists(file))
+                return LoadResult.FileNotFound;
 
-            foreach(XElement element in items)
+            var xmlContent = new StreamReader(file).ReadToEnd();
+
+            XDocument xmlDocument = null;
+            try
             {
-                var key = element.Element("key").Value;
-                var value = element.Element("value").Value;
+                xmlDocument = XDocument.Parse(xmlContent);
+            }
+            catch(Exception ex)
+            {
+                logger.Log(Level.Error, ex);
+                return LoadResult.ParseError;
+            }
+
+            if (!xmlDocument.Elements("configuration").Any())
+                return LoadResult.IncorrectStructure;
+            var root = xmlDocument.Descendants("configuration");
+
+            var items = root.Elements();
+            if (items.Any(p => p.Name != "item"))
+                return LoadResult.IncorrectStructure;
+
+            foreach (XElement e in items)
+            {
+                if (!e.Elements("key").Any() || !e.Elements("value").Any())
+                {
+                    data.Clear();
+                    return LoadResult.IncorrectStructure;
+                }
+
+                var key = e.Element("key").Value;
+                var value = e.Element("value").Value;
 
                 data.Add(key, value);
             }
+            
+            return LoadResult.Success;
         }
 
         public bool Exist(string key)
@@ -43,9 +71,7 @@ namespace CMS.Core.Services.Implementations
 
         public string GetValue(string key)
         {
-            if (!Exist(key))
-                throw new KeyNotFoundException(key);
-            return data.First(p => p.Key == key).Value;
+            return data.FirstOrDefault(p => p.Key == key).Value;
         }
     }
 }

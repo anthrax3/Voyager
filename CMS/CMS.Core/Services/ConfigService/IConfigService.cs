@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMS.Core.Services.ConfigService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace CMS.Core.Services
 {
     public interface IConfigService
     {
-        void Load(String file);
+        LoadResult Load(String file);
         bool Exist(String key);
         String GetValue(String key);
     }
