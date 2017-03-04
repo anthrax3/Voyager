@@ -11,7 +11,7 @@ namespace CMS.Core.DAL
     {
         bool IsConnected { get; }
 
-        DbSet<TEntity> Get<TEntity>() where TEntity : class;
+        IDbSet<TEntity> Get<TEntity>() where TEntity : class;
         int Save();
     }
 }

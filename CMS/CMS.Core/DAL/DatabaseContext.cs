@@ -12,7 +12,7 @@ namespace CMS.Core.DAL
     {
         static String connectionStringCache = String.Empty;
 
-        public DbSet<ConfigModel> configModel { get; set; }
+        public virtual DbSet<ConfigModel> ConfigModel { get; set; }
 
         /// <summary>
         /// If connection with DB is open, returns true. Otherwise, returns false.
@@ -77,7 +77,7 @@ namespace CMS.Core.DAL
         }
 
         /// <summary>
-        /// Save changes in DB. Returns -1 if there is no connection with DB, 
+        /// Saves changes in DB. Returns -1 if there is no connection with DB, 
         /// otherwise returns number of changed objects.
         /// </summary>
         public int Save()
@@ -88,9 +88,9 @@ namespace CMS.Core.DAL
         }
 
         /// <summary>
-        /// Get entity with specific TEntity type. Returns null if there is no connection with DB.
+        /// Gets entity with specific TEntity type. Returns null if there is no connection with DB.
         /// </summary>
-        public DbSet<TEntity> Get<TEntity>() where TEntity : class
+        public IDbSet<TEntity> Get<TEntity>() where TEntity : class
         {
             if (!IsConnected)
                 return null;

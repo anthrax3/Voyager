@@ -20,7 +20,7 @@ namespace CMS.Core.Services.ConfigService
         }
 
         /// <summary>
-        /// Load configuration data from file. Returns LoadResult.Success if there were no errors. 
+        /// Loads configuration data from file. Returns LoadResult.Success if there were no errors. 
         /// </summary>
         public LoadResult Load(string file)
         {

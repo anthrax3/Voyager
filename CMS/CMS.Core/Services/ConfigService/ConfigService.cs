@@ -42,7 +42,9 @@ namespace CMS.Core.Services.ConfigService
         /// </summary>
         public string GetValue(string key)
         {
-            return db.Get<ConfigModel>().FirstOrDefault(p => p.Key == key).Value;
+            if (!Exist(key))
+                return null;
+            return db.Get<ConfigModel>().First(p => p.Key == key).Value;
         }
 
         /// <summary>

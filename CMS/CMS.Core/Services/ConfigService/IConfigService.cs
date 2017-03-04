@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace CMS.Core.Services.ConfigService
 {
-    interface IConfigService
+    public interface IConfigService
     {
+        bool AddKey(String key, String value);
+        bool SetValue(String key, String value);
+        bool RemoveKey(String key);
+        String GetValue(String key);
+        bool Exist(String key);
     }
 }
