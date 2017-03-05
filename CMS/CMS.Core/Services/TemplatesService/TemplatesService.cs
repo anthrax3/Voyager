@@ -13,14 +13,16 @@ namespace CMS.Core.Services.TemplatesService
     public class TemplatesService : ITemplatesService
     {
         IDatabaseContext db = null;
-        ILoggerService logger = null;
 
-        public TemplatesService(IDatabaseContext db, ILoggerService logger)
+        public TemplatesService(IDatabaseContext db)
         {
             this.db = db;
-            this.logger = logger;
         }
 
+        /// <summary>
+        /// Finds active template in database and update locatinos in view engine. Returns false
+        /// if there is no active template.
+        /// </summary>
         public bool SetActiveTemplateInViewEngine()
         {
             var activeTemplate = GetActiveTemplate();
@@ -37,11 +39,17 @@ namespace CMS.Core.Services.TemplatesService
             return true;
         }
 
+        /// <summary>
+        /// Returns active template. If there is no active template, returns null.
+        /// </summary>
         public TemplateModel GetActiveTemplate()
         {
             return db.Set<TemplateModel>().FirstOrDefault(p => p.Active);
         }
 
+        /// <summary>
+        /// Disables all templates and sets template with specific name as active.
+        /// </summary>
         public bool SetTemplateAsActive(String templateName)
         {
             var entity = db.Set<TemplateModel>().FirstOrDefault(p => p.Name == templateName);

@@ -26,14 +26,14 @@ namespace CMS.Tests.Services
         }
 
         [TestMethod]
-        public void TestIfExistingElementExist()
+        public void ExistingElementExist()
         {
             var result = service.Exist("Tags");
             Assert.IsTrue(result);
         }
 
         [TestMethod]
-        public void TestIfNotExistingElementExist()
+        public void NotExistingElementExist()
         {
             var result = service.Exist("DatabaseName");
             Assert.IsFalse(result);
