@@ -3,6 +3,7 @@ using CMS.Core.DAL;
 using CMS.Core.Models;
 using CMS.Core.Services.ConfigService;
 using CMS.Core.Services.LoggerService;
+using CMS.Core.Services.TemplatesService;
 using Microsoft.Practices.Unity;
 using System;
 using System.Configuration;
@@ -17,6 +18,8 @@ namespace CMS.Core
     {
         static readonly ILoggerService logger = 
             UnityConfig.GetConfiguredContainer().Resolve<ILoggerService>();
+        static readonly ITemplatesService templates =
+            UnityConfig.GetConfiguredContainer().Resolve<ITemplatesService>();
 
         protected void Application_Start()
         {
@@ -30,6 +33,8 @@ namespace CMS.Core
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DatabaseContext, 
                  Migrations.Configuration>());
+            
+            templates.SetActiveTemplateInViewEngine();
         }
 
         void Application_Error(object sender, EventArgs e)
