@@ -48,5 +48,15 @@ namespace CMS.Core.DAL
                 return null;
             return base.Set<TEntity>();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MenuItemModel>().HasRequired(p => p.Menu)
+                .WithMany().HasForeignKey(t => t.MenuID);
+            modelBuilder.Entity<MenuItemModel>().HasRequired(p => p.Component)
+                .WithMany().HasForeignKey(t => t.ComponentID);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
