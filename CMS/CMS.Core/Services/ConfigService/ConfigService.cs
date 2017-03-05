@@ -31,7 +31,7 @@ namespace CMS.Core.Services.ConfigService
                 Value = value
             };
 
-            db.Get<ConfigModel>().Add(newKey);
+            db.Set<ConfigModel>().Add(newKey);
             db.Save();
 
             return true;
@@ -44,7 +44,7 @@ namespace CMS.Core.Services.ConfigService
         {
             if (!Exist(key))
                 return null;
-            return db.Get<ConfigModel>().First(p => p.Key == key).Value;
+            return db.Set<ConfigModel>().First(p => p.Key == key).Value;
         }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace CMS.Core.Services.ConfigService
             if (!Exist(key))
                 return false;
 
-            var entity = db.Get<ConfigModel>().First(p => p.Key == key);
-            db.Get<ConfigModel>().Remove(entity);
+            var entity = db.Set<ConfigModel>().First(p => p.Key == key);
+            db.Set<ConfigModel>().Remove(entity);
             db.Save();
 
             return true;
@@ -70,7 +70,7 @@ namespace CMS.Core.Services.ConfigService
             if (!Exist(key))
                 return false;
 
-            var entity = db.Get<ConfigModel>().First(p => p.Key == key);
+            var entity = db.Set<ConfigModel>().First(p => p.Key == key);
             entity.Value = value;
             db.Save();
 
@@ -84,7 +84,7 @@ namespace CMS.Core.Services.ConfigService
         /// <returns></returns>
         public bool Exist(string key)
         {
-            return db.Get<ConfigModel>().Any(p => p.Key == key);
+            return db.Set<ConfigModel>().Any(p => p.Key == key);
         }
     }
 }

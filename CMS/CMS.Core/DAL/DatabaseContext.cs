@@ -10,28 +10,33 @@ namespace CMS.Core.DAL
 {
     public class DatabaseContext : DbContext, IDatabaseContext
     {
-        static String connectionStringCache = String.Empty;
-
         public virtual DbSet<ConfigModel> Config { get; set; }
         public virtual DbSet<TemplateModel> Templates { get; set; }
+
+        static String connectionStringCache = String.Empty;
 
         /// <summary>
         /// If connection with DB is open, returns true. Otherwise, returns false.
         /// </summary>
         public bool IsConnected
         {
-            get { return Database.Connection.State == System.Data.ConnectionState.Open ? true : false; }
+            get { return Database.Exists(); }
         }
-
-        public DatabaseContext()
+        
+        public DatabaseContext() : base(connectionStringCache)
         {
 
         }
 
         [InjectionConstructor]
-        public DatabaseContext(IDBConfigService config, ILoggerService logger)
+        public DatabaseContext(IDBConfigService config) : base(GetConnectionString(config))
         {
-            if(connectionStringCache == String.Empty)
+
+        }
+
+        static String GetConnectionString(IDBConfigService config)
+        {
+            if (connectionStringCache == String.Empty)
             {
                 var cs = new SqlConnectionStringBuilder();
                 cs.DataSource = config.GetValue("DB-Address");
@@ -52,31 +57,9 @@ namespace CMS.Core.DAL
                 connectionStringCache = cs.ConnectionString;
             }
 
-            Database.Connection.ConnectionString = connectionStringCache;
-
-            try
-            {
-                Database.Connection.Open();
-            }
-            catch(Exception ex)
-            {
-                logger.Log(Level.Error, "Can't connect to database. Check your configuration and try again");
-                logger.Log(Level.Critical, ex);
-            }
-            
-            try
-            {
-                Database.Initialize(false);
-            }
-            catch(Exception ex)
-            {
-                logger.Log(Level.Error, "Database initialize error");
-                logger.Log(Level.Critical, ex);
-
-                Database.Connection.Close();
-            }
+            return connectionStringCache;
         }
-
+        
         /// <summary>
         /// Saves changes in DB. Returns -1 if there is no connection with DB, 
         /// otherwise returns number of changed objects.
@@ -91,7 +74,7 @@ namespace CMS.Core.DAL
         /// <summary>
         /// Gets entity with specific TEntity type. Returns null if there is no connection with DB.
         /// </summary>
-        public IDbSet<TEntity> Get<TEntity>() where TEntity : class
+        public IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             if (!IsConnected)
                 return null;

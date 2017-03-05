@@ -163,8 +163,8 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\DatabaseContext.cs" />
-    <Compile Include="DAL\DatabaseMigationConfig.cs" />
     <Compile Include="DAL\IDatabaseContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ConfigModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -12,7 +12,7 @@ namespace CMS.Tests
     {
         public bool IsConnected { get { return true; } }
 
-        public virtual IDbSet<TEntity> Get<TEntity>() where TEntity : class
+        public virtual IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return null;
         }

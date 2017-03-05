@@ -1,5 +1,6 @@
 ﻿using CMS.Core.App_Start;
 using CMS.Core.DAL;
+using CMS.Core.Models;
 using CMS.Core.Services.ConfigService;
 using CMS.Core.Services.LoggerService;
 using Microsoft.Practices.Unity;
@@ -25,9 +26,14 @@ namespace CMS.Core
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            config.Load(Server.MapPath("/") + "Database.config");
+
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DatabaseContext, 
-                DatabaseMigationConfig>());
-            config.Load(Server.MapPath("/") + "CMS.config");
+                 Migrations.Configuration>());
+            
+            var connectionTestDB = UnityConfig.GetConfiguredContainer().Resolve<IDatabaseContext>();
+            if (!connectionTestDB.IsConnected)
+                logger.Log(Level.Critical, "Can't connect to database");
         }
 
         void Application_Error(object sender, EventArgs e)

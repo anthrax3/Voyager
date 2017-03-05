@@ -1,4 +1,5 @@
 ﻿using CMS.Core.DAL;
+using CMS.Core.Models;
 using CMS.Core.Services;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,9 @@ namespace CMS.Core.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController()
+        public HomeController(IDatabaseContext db)
         {
-
+            
         }
 
         public ActionResult Index()

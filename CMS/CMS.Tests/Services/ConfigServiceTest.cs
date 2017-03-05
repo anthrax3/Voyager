@@ -15,7 +15,7 @@ namespace CMS.Tests.Services
         public void Init()
         {
             var db = new Mock<FakeDbContext>();
-            db.Setup(x => x.Get<ConfigModel>()).Returns(new FakeDbSet<ConfigModel>()
+            db.Setup(x => x.Set<ConfigModel>()).Returns(new FakeDbSet<ConfigModel>()
             {
                 new ConfigModel() { ID = 1, Key = "SiteName", Value="Example title" },
                 new ConfigModel() { ID = 2, Key = "Description", Value="Example site description" },
