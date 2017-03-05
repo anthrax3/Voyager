@@ -197,7 +197,6 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database.config" />
     <Content Include="ConnectionString.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
@@ -224,11 +223,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Templates\Web.config" />
+    <Content Include="Templates\Default\Shared\_ViewStart.cshtml" />
+    <Content Include="Templates\Default\Shared\Error.cshtml" />
+    <Content Include="Templates\Default\Shared\_Layout.cshtml" />
+    <Content Include="Templates\Default\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
