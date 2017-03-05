@@ -173,10 +173,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ConfigService\ConfigService.cs" />
     <Compile Include="Services\ConfigService\IConfigService.cs" />
-    <Compile Include="Services\DBConfigService\IDBConfigService.cs" />
-    <Compile Include="Services\DBConfigService\LoadResult.cs" />
     <Compile Include="Services\LoggerService\ILoggerService.cs" />
-    <Compile Include="Services\DBConfigService\DBConfigService.cs" />
     <Compile Include="Services\LoggerService\NLogLogger.cs" />
     <Compile Include="Services\TemplatesService\ITemplatesService.cs" />
     <Compile Include="Services\TemplatesService\TemplatesService.cs" />
@@ -201,6 +198,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Database.config" />
+    <Content Include="ConnectionString.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -5,6 +5,7 @@ using CMS.Core.Services.ConfigService;
 using CMS.Core.Services.LoggerService;
 using Microsoft.Practices.Unity;
 using System;
+using System.Configuration;
 using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -16,8 +17,6 @@ namespace CMS.Core
     {
         static readonly ILoggerService logger = 
             UnityConfig.GetConfiguredContainer().Resolve<ILoggerService>();
-        static readonly IDBConfigService config =
-            UnityConfig.GetConfiguredContainer().Resolve<IDBConfigService>();
 
         protected void Application_Start()
         {
@@ -25,8 +24,6 @@ namespace CMS.Core
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            config.Load(Server.MapPath("/") + "Database.config");
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DatabaseContext, 
                  Migrations.Configuration>());

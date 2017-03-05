@@ -23,45 +23,11 @@ namespace CMS.Core.DAL
             get { return Database.Exists(); }
         }
 
-        //Shouldn't be called manually because default connectionStringCache is empty.
-        //It's only for IDbContextFactory
-        public DatabaseContext() : base(connectionStringCache)
+        public DatabaseContext() : base("MainConnection")
         {
 
         }
 
-        [InjectionConstructor]
-        public DatabaseContext(IDBConfigService config) : base(GetConnectionString(config))
-        {
-
-        }
-
-        static String GetConnectionString(IDBConfigService config)
-        {
-            if (connectionStringCache == String.Empty)
-            {
-                var cs = new SqlConnectionStringBuilder();
-                cs.DataSource = config.GetValue("DB-Address");
-                cs.InitialCatalog = config.GetValue("DB-InitialCatalog");
-
-                var integratedSecurity = false;
-                var result = bool.TryParse(config.GetValue("DB-IntegratedSecurity"), out integratedSecurity);
-                if (!result)
-                    throw new FormatException("DB-IntegratedSecurity");
-                cs.IntegratedSecurity = integratedSecurity;
-
-                if (!cs.IntegratedSecurity)
-                {
-                    cs.UserID = config.GetValue("DB-UserName");
-                    cs.Password = config.GetValue("DB-Password");
-                }
-
-                connectionStringCache = cs.ConnectionString;
-            }
-
-            return connectionStringCache;
-        }
-        
         /// <summary>
         /// Saves changes in DB. Returns -1 if there is no connection with DB, 
         /// otherwise returns number of changed objects.
