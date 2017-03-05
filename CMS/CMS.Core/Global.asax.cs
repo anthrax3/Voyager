@@ -30,10 +30,6 @@ namespace CMS.Core
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DatabaseContext, 
                  Migrations.Configuration>());
-            
-            var connectionTestDB = UnityConfig.GetConfiguredContainer().Resolve<IDatabaseContext>();
-            if (!connectionTestDB.IsConnected)
-                logger.Log(Level.Critical, "Can't connect to database");
         }
 
         void Application_Error(object sender, EventArgs e)

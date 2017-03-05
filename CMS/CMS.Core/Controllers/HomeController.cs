@@ -13,7 +13,8 @@ namespace CMS.Core.Controllers
     {
         public HomeController(IDatabaseContext db)
         {
-            
+            db.Set<ConfigModel>().Add(new ConfigModel() { Key = "x", Value = "y" });
+            db.Save();
         }
 
         public ActionResult Index()

@@ -22,7 +22,9 @@ namespace CMS.Core.DAL
         {
             get { return Database.Exists(); }
         }
-        
+
+        //Shouldn't be called manually because default connectionStringCache is empty.
+        //It's only for IDbContextFactory
         public DatabaseContext() : base(connectionStringCache)
         {
 
