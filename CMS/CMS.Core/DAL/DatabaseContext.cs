@@ -18,6 +18,7 @@ namespace CMS.Core.DAL
         public virtual DbSet<ComponentsData> ComponentsData { get; set; }
         public virtual DbSet<ComponentInstances> ComponentInstances { get; set; }
         public virtual DbSet<PositionModel> Positions { get; set; }
+        public virtual DbSet<ComponentActions> ComponentActions { get; set; }
 
         static String connectionStringCache = String.Empty;
 

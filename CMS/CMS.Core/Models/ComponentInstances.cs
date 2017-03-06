@@ -10,5 +10,6 @@ namespace CMS.Core.Models
         public int ID { get; set; }
         public int PositionID { get; set; }
         public virtual PositionModel Position { get; set; }
+        public int ActionID {}
     }
 }

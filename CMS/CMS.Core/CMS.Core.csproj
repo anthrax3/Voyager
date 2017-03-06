@@ -168,6 +168,7 @@
     <Compile Include="DAL\IDatabaseContext.cs" />
     <Compile Include="InternalComponents\ArticlesCom\ArticlesCom.cs" />
     <Compile Include="InternalComponents\ArticlesCom\IArticlesCom.cs" />
+    <Compile Include="Models\ComponentActions.cs" />
     <Compile Include="Models\ComponentInstances.cs" />
     <Compile Include="Models\PositionModel.cs" />
     <Compile Include="Services\ComponentsService\ComponentType.cs" />
