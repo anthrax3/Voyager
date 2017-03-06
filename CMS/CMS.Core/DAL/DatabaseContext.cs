@@ -4,6 +4,7 @@ using CMS.Core.Services.LoggerService;
 using Microsoft.Practices.Unity;
 using System;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 
 namespace CMS.Core.DAL
@@ -15,10 +16,10 @@ namespace CMS.Core.DAL
         public virtual DbSet<MenuModel> Menus { get; set; }
         public virtual DbSet<MenuItemModel> MenuItems { get; set; }
         public virtual DbSet<ComponentModel> Components { get; set; }
-        public virtual DbSet<ComponentsData> ComponentsData { get; set; }
-        public virtual DbSet<ComponentInstances> ComponentInstances { get; set; }
+        public virtual DbSet<ComponentsDataModel> ComponentsData { get; set; }
+        public virtual DbSet<ComponentInstancesModel> ComponentInstances { get; set; }
         public virtual DbSet<PositionModel> Positions { get; set; }
-        public virtual DbSet<ComponentActions> ComponentActions { get; set; }
+        public virtual DbSet<ComponentActionsModel> ComponentActions { get; set; }
 
         static String connectionStringCache = String.Empty;
 
@@ -58,6 +59,7 @@ namespace CMS.Core.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             base.OnModelCreating(modelBuilder);
         }
     }

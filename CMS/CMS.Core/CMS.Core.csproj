@@ -168,14 +168,14 @@
     <Compile Include="DAL\IDatabaseContext.cs" />
     <Compile Include="InternalComponents\ArticlesCom\ArticlesCom.cs" />
     <Compile Include="InternalComponents\ArticlesCom\IArticlesCom.cs" />
-    <Compile Include="Models\ComponentActions.cs" />
-    <Compile Include="Models\ComponentInstances.cs" />
+    <Compile Include="Models\ComponentActionsModel.cs" />
+    <Compile Include="Models\ComponentInstancesModel.cs" />
     <Compile Include="Models\PositionModel.cs" />
     <Compile Include="Services\ComponentsService\ComponentType.cs" />
     <Compile Include="Services\ComponentsService\IComponent.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ComponentModel.cs" />
-    <Compile Include="Models\ComponentsData.cs" />
+    <Compile Include="Models\ComponentsDataModel.cs" />
     <Compile Include="Models\ConfigModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
