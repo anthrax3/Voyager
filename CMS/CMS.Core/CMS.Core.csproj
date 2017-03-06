@@ -162,11 +162,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\DatabaseContext.cs" />
     <Compile Include="DAL\IDatabaseContext.cs" />
     <Compile Include="InternalComponents\ArticlesCom\ArticlesCom.cs" />
     <Compile Include="InternalComponents\ArticlesCom\IArticlesCom.cs" />
+    <Compile Include="Models\ComponentInstances.cs" />
+    <Compile Include="Models\PositionModel.cs" />
     <Compile Include="Services\ComponentsService\ComponentType.cs" />
     <Compile Include="Services\ComponentsService\IComponent.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -245,6 +248,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Views\Components\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

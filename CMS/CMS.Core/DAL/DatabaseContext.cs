@@ -16,6 +16,8 @@ namespace CMS.Core.DAL
         public virtual DbSet<MenuItemModel> MenuItems { get; set; }
         public virtual DbSet<ComponentModel> Components { get; set; }
         public virtual DbSet<ComponentsData> ComponentsData { get; set; }
+        public virtual DbSet<ComponentInstances> ComponentInstances { get; set; }
+        public virtual DbSet<PositionModel> Positions { get; set; }
 
         static String connectionStringCache = String.Empty;
 
