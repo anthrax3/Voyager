@@ -59,6 +59,7 @@ namespace CMS.Core.DAL
         {
             modelBuilder.Entity<MenuItemModel>().HasRequired(p => p.Menu)
                 .WithMany().HasForeignKey(t => t.MenuID);
+
             modelBuilder.Entity<MenuItemModel>().HasRequired(p => p.Component)
                 .WithMany().HasForeignKey(t => t.ComponentID);
 

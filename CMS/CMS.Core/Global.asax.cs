@@ -1,8 +1,6 @@
 ﻿using CMS.Core.App_Start;
 using CMS.Core.DAL;
-using CMS.Core.Models;
-using CMS.Core.Services.Components;
-using CMS.Core.Services.ConfigService;
+using CMS.Core.Services.ComponentsService;
 using CMS.Core.Services.LoggerService;
 using CMS.Core.Services.TemplatesService;
 using Microsoft.Practices.Unity;

@@ -1,4 +1,4 @@
-﻿using CMS.Core.Services.Components;
+﻿using CMS.Core.Services.ComponentsService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
