@@ -4,6 +4,7 @@ using CMS.Core.DAL;
 using CMS.Core.Services.ConfigService;
 using CMS.Core.Services.LoggerService;
 using CMS.Core.Services.TemplatesService;
+using CMS.Core.Services.Components;
 
 namespace CMS.Core.App_Start
 {
@@ -38,6 +39,7 @@ namespace CMS.Core.App_Start
             container.RegisterType<ILoggerService, NLogLogger>();
             container.RegisterType<IDatabaseContext, DatabaseContext>();
             container.RegisterType<ITemplatesService, TemplatesService>();
+            container.RegisterType<IComponentsService, ComponentsService>();
         }
     }
 }
