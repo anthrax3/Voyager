@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMS.Core.Services.Components
+namespace CMS.Core.Services.ComponentsService
 {
     public interface IComponent
     {

@@ -8,7 +8,7 @@ using Microsoft.Practices.Unity;
 using CMS.Core.DAL;
 using CMS.Core.Models;
 
-namespace CMS.Core.Services.Components
+namespace CMS.Core.Services.ComponentsService
 {
     public class ComponentsService : IComponentsService
     {
