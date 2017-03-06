@@ -5,22 +5,38 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using Microsoft.Practices.Unity;
+using CMS.Core.DAL;
+using CMS.Core.Models;
 
 namespace CMS.Core.Services.Components
 {
     public class ComponentsService : IComponentsService
     {
+        IDatabaseContext db = null;
+
         List<IComponent> components = new List<IComponent>();
+
+        public ComponentsService(IDatabaseContext db)
+        {
+            this.db = db;
+        }
 
         public List<Type> GetInternalComponentsList()
         {
-            String componentsNamespace = "CMS.Core.InternalComponents";
+            var components = new List<Type>();
+            var listOfComponents = db.Set<ComponentModel>().
+                                        Select(p => new { p.Namespace, p.MainClassName }).
+                                        ToList();
 
-            var components = Assembly.GetExecutingAssembly().GetTypes()
-                .Where(p => p.IsClass && 
-                       p.Namespace == componentsNamespace && 
-                       p.GetInterfaces().Contains(typeof(IComponent)))
-                .ToList();
+            for(int i=0; i<listOfComponents.Count; i++)
+            {
+                var ns = listOfComponents[i].Namespace;
+                var name = listOfComponents[i].MainClassName;
+
+                Type t = Assembly.GetExecutingAssembly().GetTypes()
+                                 .FirstOrDefault(p => p.Namespace == ns && p.Name == name);
+                components.Add(t);
+            }
 
             return components;
         }
