@@ -5,13 +5,13 @@ using System.Web;
 
 namespace CMS.Core.Models
 {
-    public class ComponentActionsModel
+    public class ComponentDataModel
     {
         public int ID { get; set; }
         public String Name { get; set; }
-        public String ActionName { get; set; }
+        public String Data { get; set; }
 
-        public int ComponentID { get; set; }
-        public virtual ComponentModel Component { get; set; }
+        public int ComponentInstanceID { get; set; }
+        public virtual ComponentInstanceModel ComponentInstance { get; set; }
     }
 }

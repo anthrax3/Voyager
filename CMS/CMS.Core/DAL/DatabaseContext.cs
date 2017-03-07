@@ -16,10 +16,10 @@ namespace CMS.Core.DAL
         public virtual DbSet<MenuModel> Menus { get; set; }
         public virtual DbSet<MenuItemModel> MenuItems { get; set; }
         public virtual DbSet<ComponentModel> Components { get; set; }
-        public virtual DbSet<ComponentsDataModel> ComponentsData { get; set; }
-        public virtual DbSet<ComponentInstancesModel> ComponentInstances { get; set; }
+        public virtual DbSet<ComponentDataModel> ComponentsData { get; set; }
+        public virtual DbSet<ComponentInstanceModel> ComponentInstances { get; set; }
         public virtual DbSet<PositionModel> Positions { get; set; }
-        public virtual DbSet<ComponentActionsModel> ComponentActions { get; set; }
+        public virtual DbSet<ComponentActionModel> ComponentActions { get; set; }
 
         static String connectionStringCache = String.Empty;
 
@@ -60,6 +60,7 @@ namespace CMS.Core.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
             base.OnModelCreating(modelBuilder);
         }
     }

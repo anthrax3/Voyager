@@ -14,7 +14,7 @@ namespace CMS.Core.Models
         public int MenuID { get; set; }
         public virtual MenuModel Menu { get; set; }
 
-        public int ComponentID { get; set; }
-        public virtual ComponentModel Component { get; set; }
+        public int ComponentInstanceID { get; set; }
+        public virtual ComponentInstanceModel ComponentInstance { get; set; }
     }
 }
