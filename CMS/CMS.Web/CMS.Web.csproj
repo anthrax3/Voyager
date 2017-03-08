@@ -164,35 +164,10 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\DatabaseContext.cs" />
-    <Compile Include="DAL\IDatabaseContext.cs" />
-    <Compile Include="InternalComponents\ArticlesCom\ArticlesCom.cs" />
-    <Compile Include="InternalComponents\ArticlesCom\IArticlesCom.cs" />
-    <Compile Include="Models\ComponentActionModel.cs" />
-    <Compile Include="Models\ComponentInstanceModel.cs" />
-    <Compile Include="Models\PositionModel.cs" />
-    <Compile Include="Services\ComponentsService\ComponentType.cs" />
-    <Compile Include="Services\ComponentsService\IComponent.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\ComponentModel.cs" />
-    <Compile Include="Models\ConfigModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\MenuItemModel.cs" />
-    <Compile Include="Models\MenuModel.cs" />
-    <Compile Include="Models\TemplateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ComponentsService\ComponentsService.cs" />
-    <Compile Include="Services\ComponentsService\IComponentsService.cs" />
-    <Compile Include="Services\ConfigService\ConfigService.cs" />
-    <Compile Include="Services\ConfigService\IConfigService.cs" />
-    <Compile Include="Services\LoggerService\ILoggerService.cs" />
-    <Compile Include="Services\LoggerService\NLogLogger.cs" />
-    <Compile Include="Services\PositionsService\IPositionsService.cs" />
-    <Compile Include="Services\PositionsService\PositionsService.cs" />
-    <Compile Include="Services\TemplatesService\ITemplatesService.cs" />
-    <Compile Include="Services\TemplatesService\TemplatesService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -247,7 +222,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

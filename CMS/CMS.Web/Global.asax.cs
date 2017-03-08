@@ -1,8 +1,4 @@
 ﻿using CMS.Web.App_Start;
-using CMS.Web.DAL;
-using CMS.Web.Services.ComponentsService;
-using CMS.Web.Services.LoggerService;
-using CMS.Web.Services.TemplatesService;
 using Microsoft.Practices.Unity;
 using System;
 using System.Configuration;
@@ -15,12 +11,12 @@ namespace CMS.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        static readonly ILoggerService logger = 
+        /*static readonly ILoggerService logger = 
             UnityConfig.GetConfiguredContainer().Resolve<ILoggerService>();
         static readonly ITemplatesService templates =
             UnityConfig.GetConfiguredContainer().Resolve<ITemplatesService>();
         static readonly IComponentsService components =
-            UnityConfig.GetConfiguredContainer().Resolve<IComponentsService>();
+            UnityConfig.GetConfiguredContainer().Resolve<IComponentsService>();*/
 
         protected void Application_Start()
         {
@@ -32,11 +28,11 @@ namespace CMS.Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new ExtendedRazorViewEngine());
 
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DatabaseContext, 
-                 Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CMS.Core.Database.DatabaseContext,
+                 CMS.Core.Migrations.Configuration>());
 
-            components.LoadInternalComponents();
-            templates.SetActiveTemplateInViewEngine();
+            //components.LoadInternalComponents();
+            //templates.SetActiveTemplateInViewEngine();
         }
 
         void Application_Error(object sender, EventArgs e)
@@ -44,7 +40,7 @@ namespace CMS.Web
             Exception exception = Server.GetLastError();
             if (exception != null)
             {
-                logger.Log(Level.Critical, exception);
+                //logger.Log(Level.Critical, exception);
             }
         }
     }
