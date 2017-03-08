@@ -24,7 +24,21 @@ namespace CMS.Core.Services.Components
             var folders = Directory.GetDirectories(rootPath + "Components");
             foreach(String componentDir in folders)
             {
+                var files = Directory.GetFiles(componentDir);
+                foreach(String f in files)
+                {
+                    var fileName = f.Split('\\').Last();
+                    if (!fileName.StartsWith("Com"))
+                        continue;
 
+                    var dll = Assembly.LoadFile(f);
+                    var main = dll.GetTypes().FirstOrDefault(p => p.IsClass &&
+                                p.GetInterfaces().Contains(typeof(IComponent)));
+                    var instance = (IComponent)Activator.CreateInstance(main);
+
+                    components.Add(instance);
+                    break;
+                }
             }
         }
 
