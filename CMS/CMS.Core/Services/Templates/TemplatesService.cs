@@ -16,23 +16,21 @@ namespace CMS.Core.Services.Templates
         }
 
         /// <summary>
-        /// Finds active template in database and update locatinos in view engine. Returns false
+        /// Finds active template in database and returns localisations. Returns null
         /// if there is no active template.
         /// </summary>
-        public bool SetActiveTemplateInViewEngine()
+        public List<String> GetListOfTemplateLocalisations()
         {
             var activeTemplate = GetActiveTemplate();
             if (activeTemplate == null)
-                return false;
+                return null;
             
-            //var viewEngine = ViewEngines.Engines.First() as ExtendedRazorViewEngine;
-            //var viewLocations = new List<String>() {
-            //    "~/Templates/" + activeTemplate.DirName + "/{1}/{0}.cshtml",
-            //    "~/Templates/" + activeTemplate.DirName + "/Shared/{0}.cshtml"
-           // };
-           // viewEngine.SetLocations(viewLocations);
+            var viewLocations = new List<String>() {
+                "~/Templates/" + activeTemplate.DirName + "/{1}/{0}.cshtml",
+                "~/Templates/" + activeTemplate.DirName + "/Shared/{0}.cshtml"
+            };
 
-            return true;
+            return viewLocations;
         }
 
         /// <summary>

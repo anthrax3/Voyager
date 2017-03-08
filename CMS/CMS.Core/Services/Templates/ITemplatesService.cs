@@ -9,7 +9,7 @@ namespace CMS.Core.Services.Templates
 {
     public interface ITemplatesService
     {
-        bool SetActiveTemplateInViewEngine();
+        List<String> GetListOfTemplateLocalisations();
         TemplateModel GetActiveTemplate();
         bool SetTemplateAsActive(String templateName);
     }

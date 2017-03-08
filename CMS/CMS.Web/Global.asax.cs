@@ -1,4 +1,7 @@
-﻿using CMS.Web.App_Start;
+﻿using CMS.Core.Services.Log;
+using CMS.Core.Services.Templates;
+using CMS.Web.App_Start;
+using CMS.Web.Services.ViewEngine;
 using Microsoft.Practices.Unity;
 using System;
 using System.Configuration;
@@ -11,12 +14,12 @@ namespace CMS.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        /*static readonly ILoggerService logger = 
+        static readonly ILoggerService logger = 
             UnityConfig.GetConfiguredContainer().Resolve<ILoggerService>();
         static readonly ITemplatesService templates =
             UnityConfig.GetConfiguredContainer().Resolve<ITemplatesService>();
-        static readonly IComponentsService components =
-            UnityConfig.GetConfiguredContainer().Resolve<IComponentsService>();*/
+        static readonly IViewEngineService viewEngineService =
+            UnityConfig.GetConfiguredContainer().Resolve<IViewEngineService>();
 
         protected void Application_Start()
         {
@@ -31,8 +34,9 @@ namespace CMS.Web
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<CMS.Core.Database.DatabaseContext,
                  CMS.Core.Migrations.Configuration>());
 
-            //components.LoadInternalComponents();
-            //templates.SetActiveTemplateInViewEngine();
+            //Template setup
+            var localisations = templates.GetListOfTemplateLocalisations();
+            viewEngineService.UpdateViewLocalisations(localisations);
         }
 
         void Application_Error(object sender, EventArgs e)

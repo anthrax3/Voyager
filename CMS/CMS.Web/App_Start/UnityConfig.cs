@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Practices.Unity;
 using CMS.Core.Services;
+using CMS.Web.Services.ViewEngine;
 
 namespace CMS.Web.App_Start
 {
@@ -32,8 +33,12 @@ namespace CMS.Web.App_Start
         /// change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            var manager = new UnityManager();
-            manager.RegisterDependencies(container);
+            //Core services
+            var coreUnityManager = new UnityManager();
+            coreUnityManager.RegisterCoreDependencies(container);
+
+            //Web services
+            container.RegisterType<IViewEngineService, ViewEngineService>();
         }
     }
 }

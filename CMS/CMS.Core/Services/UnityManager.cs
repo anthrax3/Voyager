@@ -19,7 +19,7 @@ namespace CMS.Core.Services
 
         }
 
-        public void RegisterDependencies(IUnityContainer container)
+        public void RegisterCoreDependencies(IUnityContainer container)
         {
             container.RegisterType<ILoggerService, NLogLogger>();
             container.RegisterType<IDatabaseContext, DatabaseContext>();
