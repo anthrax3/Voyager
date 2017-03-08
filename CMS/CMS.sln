@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Core", "CMS.Core\CMS.Core.csproj", "{E68FE647-C3A5-4168-B904-5EA7DF0D3C09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Articles", "Components\Articles\Articles.csproj", "{E478C04A-19CD-4F87-B91E-51E42EB88F98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComArticles", "Components\Articles\ComArticles.csproj", "{E478C04A-19CD-4F87-B91E-51E42EB88F98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

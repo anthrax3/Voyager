@@ -1,4 +1,6 @@
 ﻿using CMS.Core.DB;
+using CMS.Core.Services.Components;
+using CMS.Core.Services.Positions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

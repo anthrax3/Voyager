@@ -1,4 +1,5 @@
 ﻿using CMS.Core;
+using CMS.Core.Services.Components;
 using CMS.Core.Services.Log;
 using CMS.Core.Services.Templates;
 using CMS.Web.App_Start;
@@ -17,10 +18,8 @@ namespace CMS.Web
     {
         static readonly ILoggerService logger = 
             UnityConfig.GetConfiguredContainer().Resolve<ILoggerService>();
-        static readonly ITemplatesService templates =
-            UnityConfig.GetConfiguredContainer().Resolve<ITemplatesService>();
-        static readonly IViewEngineService viewEngineService =
-            UnityConfig.GetConfiguredContainer().Resolve<IViewEngineService>();
+        static readonly IComponentsLoaderService componentsLoaderService =
+            UnityConfig.GetConfiguredContainer().Resolve<IComponentsLoaderService>();
 
         protected void Application_Start()
         {
@@ -32,13 +31,11 @@ namespace CMS.Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new ExtendedRazorViewEngine());
 
-            //Core setup
-            var core = new CoreBootloader();
-            core.Init();
-           
-            //Template setup
-            var localisations = templates.GetListOfTemplateLocalisations();
-            viewEngineService.UpdateViewLocalisations(localisations);
+            componentsLoaderService.LoadComponents();
+
+            //Web bootstrap
+            var webBootstrap = UnityConfig.GetConfiguredContainer().Resolve<WebBootstrap>();
+            webBootstrap.Init();
         }
 
         void Application_Error(object sender, EventArgs e)

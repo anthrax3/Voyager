@@ -102,6 +102,7 @@
     <Compile Include="FakeDbContext.cs" />
     <Compile Include="FakeDbSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ComponentsServiceTest.cs" />
     <Compile Include="Services\ConfigServiceTest.cs" />
     <Compile Include="Services\TemplatesServiceTest.cs" />
   </ItemGroup>

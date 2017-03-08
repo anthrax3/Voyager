@@ -2,6 +2,7 @@ using System;
 using Microsoft.Practices.Unity;
 using CMS.Core.Services;
 using CMS.Web.Services.ViewEngine;
+using System.Web;
 
 namespace CMS.Web.App_Start
 {
@@ -35,7 +36,8 @@ namespace CMS.Web.App_Start
         {
             //Core services
             var coreUnityManager = new UnityManager();
-            coreUnityManager.RegisterCoreDependencies(container);
+            coreUnityManager.RegisterCoreDependencies(container, 
+                HttpRuntime.AppDomainAppPath);
 
             //Web services
             container.RegisterType<IViewEngineService, ViewEngineService>();

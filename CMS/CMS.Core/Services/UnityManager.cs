@@ -19,12 +19,13 @@ namespace CMS.Core.Services
 
         }
 
-        public void RegisterCoreDependencies(IUnityContainer container)
+        public void RegisterCoreDependencies(IUnityContainer container, String rootPath)
         {
             container.RegisterType<ILoggerService, NLogLogger>();
             container.RegisterType<IDatabaseContext, DatabaseContext>();
             container.RegisterType<ITemplatesService, TemplatesService>();
-            container.RegisterType<IComponentsService, ComponentsService>();
+            container.RegisterType<IComponentsLoaderService, ComponentsLoaderService>(
+                new InjectionConstructor(rootPath));
             container.RegisterType<IPositionsService, PositionsService>();
         }
     }
