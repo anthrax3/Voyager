@@ -1,1 +1,2 @@
+$ cat .gitattributes
 CMS/CMS.Web/Scripts/* linguist-vendored
