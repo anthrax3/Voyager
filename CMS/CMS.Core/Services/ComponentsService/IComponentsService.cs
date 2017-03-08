@@ -14,5 +14,7 @@ namespace CMS.Core.Services.ComponentsService
         T GetComponent<T>();
         IComponent GetComponent(ComponentType type);
         IComponent GetComponent(String name);
+
+        List<IComponent> GetLoadedComponents();
     }
 }

@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CMS.Core.DAL;
+using System.Data.Entity;
 
 namespace CMS.Core.InternalComponents
 {
@@ -19,6 +21,11 @@ namespace CMS.Core.InternalComponents
         public String DisplayArticle(int id)
         {
             return "Text from " + Name;
+        }
+
+        public void SetupDatabase(IDatabaseContext context, DbModelBuilder builder)
+        {
+
         }
     }
 }

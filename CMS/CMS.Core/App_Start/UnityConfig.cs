@@ -40,7 +40,7 @@ namespace CMS.Core.App_Start
             container.RegisterType<ILoggerService, NLogLogger>();
             container.RegisterType<IDatabaseContext, DatabaseContext>();
             container.RegisterType<ITemplatesService, TemplatesService>();
-            container.RegisterType<IComponentsService, ComponentsService>();
+            container.RegisterType<IComponentsService, ComponentsService>(new PerThreadLifetimeManager());
             container.RegisterType<IPositionsService, PositionsService>();
         }
     }

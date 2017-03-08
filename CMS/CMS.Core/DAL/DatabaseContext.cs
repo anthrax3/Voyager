@@ -1,8 +1,12 @@
-﻿using CMS.Core.Models;
+﻿using CMS.Core.App_Start;
+using CMS.Core.Models;
+using CMS.Core.Services.ComponentsService;
 using CMS.Core.Services.ConfigService;
 using CMS.Core.Services.LoggerService;
 using Microsoft.Practices.Unity;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
@@ -16,12 +20,13 @@ namespace CMS.Core.DAL
         public virtual DbSet<MenuModel> Menus { get; set; }
         public virtual DbSet<MenuItemModel> MenuItems { get; set; }
         public virtual DbSet<ComponentModel> Components { get; set; }
-        public virtual DbSet<ComponentDataModel> ComponentsData { get; set; }
         public virtual DbSet<ComponentInstanceModel> ComponentInstances { get; set; }
         public virtual DbSet<PositionModel> Positions { get; set; }
         public virtual DbSet<ComponentActionModel> ComponentActions { get; set; }
-
+        
         static String connectionStringCache = String.Empty;
+        IComponentsService componentsService = 
+            UnityConfig.GetConfiguredContainer().Resolve<IComponentsService>();
 
         /// <summary>
         /// If connection with DB is open, returns true. Otherwise, returns false.
@@ -60,7 +65,7 @@ namespace CMS.Core.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-
+            
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -68,5 +68,10 @@ namespace CMS.Core.Services.ComponentsService
         {
             return components.FirstOrDefault(p => p.Name == name);
         }
+
+        public List<IComponent> GetLoadedComponents()
+        {
+            return null;
+        }
     }
 }
