@@ -1,5 +1,6 @@
 ﻿using CMS.Core.DB;
-using CMS.Core.Services.Components;
+using CMS.Core.Services.ComponentsLoader;
+using CMS.Core.Services.ComponentsManager;
 using CMS.Core.Services.Log;
 using CMS.Core.Services.Positions;
 using CMS.Core.Services.Templates;
@@ -27,6 +28,7 @@ namespace CMS.Core.Services
             container.RegisterType<IComponentsLoaderService, ComponentsLoaderService>(
                 new InjectionConstructor(rootPath));
             container.RegisterType<IPositionsService, PositionsService>();
+            container.RegisterType<IComponentsManagerService, ComponentsManagerService>();
         }
     }
 }

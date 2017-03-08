@@ -79,9 +79,11 @@
     <Compile Include="Models\ConfigModel.cs" />
     <Compile Include="Models\TemplateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Components\ComponentsLoaderService.cs" />
+    <Compile Include="Services\ComponentsLoader\ComponentsLoaderService.cs" />
     <Compile Include="Components\IComponent.cs" />
-    <Compile Include="Services\Components\IComponentsLoaderService.cs" />
+    <Compile Include="Services\ComponentsLoader\IComponentsLoaderService.cs" />
+    <Compile Include="Services\ComponentsManager\ComponentsManagerService.cs" />
+    <Compile Include="Services\ComponentsManager\IComponentsManagerService.cs" />
     <Compile Include="Services\Config\ConfigService.cs" />
     <Compile Include="Services\Config\IConfigService.cs" />
     <Compile Include="Services\Log\ILoggerService.cs" />

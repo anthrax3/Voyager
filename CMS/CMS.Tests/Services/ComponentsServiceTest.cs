@@ -1,5 +1,5 @@
 ﻿using CMS.Core.Models;
-using CMS.Core.Services.Components;
+using CMS.Core.Services.ComponentsLoader;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;

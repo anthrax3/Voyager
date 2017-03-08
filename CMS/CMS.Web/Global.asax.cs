@@ -1,5 +1,5 @@
 ﻿using CMS.Core;
-using CMS.Core.Services.Components;
+using CMS.Core.Services.ComponentsLoader;
 using CMS.Core.Services.Log;
 using CMS.Core.Services.Templates;
 using CMS.Web.App_Start;

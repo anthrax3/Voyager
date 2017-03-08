@@ -2,12 +2,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace CMS.Core.Services.Components
+namespace CMS.Core.Services.ComponentsLoader
 {
     public interface IComponentsLoaderService
     {
         void LoadComponents();
-        //List<Type> GetComponentsList();
 
         T GetComponent<T>();
         IComponent GetComponent(String name);

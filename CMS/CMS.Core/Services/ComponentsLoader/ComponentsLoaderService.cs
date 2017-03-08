@@ -7,7 +7,7 @@ using CMS.Core.DB;
 using CMS.Core.Components;
 using System.IO;
 
-namespace CMS.Core.Services.Components
+namespace CMS.Core.Services.ComponentsLoader
 {
     internal class ComponentsLoaderService : IComponentsLoaderService
     {
@@ -41,24 +41,6 @@ namespace CMS.Core.Services.Components
                 }
             }
         }
-
-        /*public List<Type> GetComponentsList()
-        {
-            var components = new List<Type>();
-            //var folders = Directory.GetDirectories("~")
-
-            /*for(int i=0; i<listOfComponents.Count; i++)
-            {
-                var ns = listOfComponents[i].Namespace;
-                var name = listOfComponents[i].MainClassName;
-
-                Type t = Assembly.GetExecutingAssembly().GetTypes()
-                                 .FirstOrDefault(p => p.Namespace == ns && p.Name == name);
-                components.Add(t);
-            }
-
-            return null;
-        }*/
 
         public T GetComponent<T>()
         {
