@@ -1,4 +1,4 @@
-﻿using CMS.Core.Database;
+﻿using CMS.Core.DB;
 using CMS.Core.Services.Components;
 using CMS.Core.Services.Log;
 using CMS.Core.Services.Positions;

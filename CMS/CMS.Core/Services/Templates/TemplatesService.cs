@@ -1,4 +1,4 @@
-﻿using CMS.Core.Database;
+﻿using CMS.Core.DB;
 using CMS.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CMS.Core.Services.Templates
 {
-    public class TemplatesService : ITemplatesService
+    internal class TemplatesService : ITemplatesService
     {
         IDatabaseContext db = null;
 

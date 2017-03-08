@@ -1,8 +1,9 @@
 namespace CMS.Core.Migrations
 {
+    using DB;
     using System.Data.Entity.Migrations;
 
-    public sealed class Configuration : DbMigrationsConfiguration<CMS.Core.Database.DatabaseContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DatabaseContext>
     {
         public Configuration()
         {
@@ -10,7 +11,7 @@ namespace CMS.Core.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(CMS.Core.Database.DatabaseContext context)
+        protected override void Seed(DatabaseContext context)
         {
 
         }

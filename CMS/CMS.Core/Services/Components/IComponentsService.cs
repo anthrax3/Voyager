@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMS.Core.Components;
+using System;
 using System.Collections.Generic;
 
 namespace CMS.Core.Services.Components
@@ -9,7 +10,6 @@ namespace CMS.Core.Services.Components
         void LoadInternalComponents();
 
         T GetComponent<T>();
-        IComponent GetComponent(ComponentType type);
         IComponent GetComponent(String name);
 
         List<IComponent> GetLoadedComponents();

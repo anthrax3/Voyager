@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using CMS.Core.Models;
-using CMS.Core.Database;
+using CMS.Core.DB;
+using CMS.Core.Components;
 
 namespace CMS.Core.Services.Components
 {
-    public class ComponentsService : IComponentsService
+    internal class ComponentsService : IComponentsService
     {
         IDatabaseContext db = null;
 
@@ -54,11 +55,6 @@ namespace CMS.Core.Services.Components
         {
             return (T)components.FirstOrDefault(p => p.GetType().GetInterfaces().
                                                               Contains(typeof(T)));
-        }
-
-        public IComponent GetComponent(ComponentType type)
-        {
-            return components.FirstOrDefault(p => p.Type == type);
         }
 
         public IComponent GetComponent(String name)

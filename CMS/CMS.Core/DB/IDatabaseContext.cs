@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace CMS.Core.Database
+namespace CMS.Core.DB
 {
     public interface IDatabaseContext
     {

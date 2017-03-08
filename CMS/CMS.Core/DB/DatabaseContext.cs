@@ -3,9 +3,9 @@ using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace CMS.Core.Database
+namespace CMS.Core.DB
 {
-    public class DatabaseContext : DbContext, IDatabaseContext
+    internal class DatabaseContext : DbContext, IDatabaseContext
     {
         public virtual DbSet<ConfigModel> Config { get; set; }
         public virtual DbSet<TemplateModel> Templates { get; set; }

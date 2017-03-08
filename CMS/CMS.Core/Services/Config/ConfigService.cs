@@ -1,4 +1,4 @@
-﻿using CMS.Core.Database;
+﻿using CMS.Core.DB;
 using CMS.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Web;
 
 namespace CMS.Core.Services.Config
 {
-    public class ConfigService : IConfigService
+    internal class ConfigService : IConfigService
     {
         IDatabaseContext db = null;
 

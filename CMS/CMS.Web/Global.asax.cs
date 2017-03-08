@@ -1,4 +1,5 @@
-﻿using CMS.Core.Services.Log;
+﻿using CMS.Core;
+using CMS.Core.Services.Log;
 using CMS.Core.Services.Templates;
 using CMS.Web.App_Start;
 using CMS.Web.Services.ViewEngine;
@@ -31,8 +32,8 @@ namespace CMS.Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new ExtendedRazorViewEngine());
 
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CMS.Core.Database.DatabaseContext,
-                 CMS.Core.Migrations.Configuration>());
+            var core = new CoreBootloader();
+            core.Init();
 
             //Template setup
             var localisations = templates.GetListOfTemplateLocalisations();
