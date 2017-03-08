@@ -76,9 +76,6 @@
     <Compile Include="Models\ComponentInstanceModel.cs" />
     <Compile Include="Models\ComponentModel.cs" />
     <Compile Include="Models\ConfigModel.cs" />
-    <Compile Include="Models\MenuItemModel.cs" />
-    <Compile Include="Models\MenuModel.cs" />
-    <Compile Include="Models\PositionModel.cs" />
     <Compile Include="Models\TemplateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Components\ComponentsService.cs" />

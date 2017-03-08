@@ -10,9 +10,6 @@ namespace CMS.Core.Models
         public int ID { get; set; }
         public String Name { get; set; }
 
-        public int PositionID { get; set; }
-        public virtual PositionModel Position { get; set; }
-
         public int ComponentID { get; set; }
         public virtual ComponentModel Component { get; set; }
     }

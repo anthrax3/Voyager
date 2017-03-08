@@ -9,11 +9,8 @@ namespace CMS.Core.Database
     {
         public virtual DbSet<ConfigModel> Config { get; set; }
         public virtual DbSet<TemplateModel> Templates { get; set; }
-        public virtual DbSet<MenuModel> Menus { get; set; }
-        public virtual DbSet<MenuItemModel> MenuItems { get; set; }
         public virtual DbSet<ComponentModel> Components { get; set; }
         public virtual DbSet<ComponentInstanceModel> ComponentInstances { get; set; }
-        public virtual DbSet<PositionModel> Positions { get; set; }
         public virtual DbSet<ComponentActionModel> ComponentActions { get; set; }
         
         static String connectionStringCache = String.Empty;
