@@ -32,9 +32,10 @@ namespace CMS.Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new ExtendedRazorViewEngine());
 
+            //Core setup
             var core = new CoreBootloader();
             core.Init();
-
+           
             //Template setup
             var localisations = templates.GetListOfTemplateLocalisations();
             viewEngineService.UpdateViewLocalisations(localisations);
@@ -45,7 +46,7 @@ namespace CMS.Web
             Exception exception = Server.GetLastError();
             if (exception != null)
             {
-                //logger.Log(Level.Critical, exception);
+                logger.Log(Level.Critical, exception);
             }
         }
     }

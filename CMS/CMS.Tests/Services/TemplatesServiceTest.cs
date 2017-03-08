@@ -1,5 +1,5 @@
-﻿using CMS.Web.Models;
-using CMS.Web.Services.TemplatesService;
+﻿using CMS.Core.Models;
+using CMS.Core.Services.Templates;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

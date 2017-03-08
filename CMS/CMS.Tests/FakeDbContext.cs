@@ -1,4 +1,4 @@
-﻿using CMS.Web.DAL;
+﻿using CMS.Core.DB;
 using System.Data.Entity;
 
 namespace CMS.Tests

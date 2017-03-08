@@ -11,7 +11,6 @@ namespace CMS.Core.Services.Config
     internal class ConfigService : IConfigService
     {
         IDatabaseContext db = null;
-
         public ConfigService(IDatabaseContext db)
         {
             this.db = db;

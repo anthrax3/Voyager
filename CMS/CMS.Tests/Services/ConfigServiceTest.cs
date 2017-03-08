@@ -1,5 +1,5 @@
-﻿using CMS.Web.Models;
-using CMS.Web.Services.ConfigService;
+﻿using CMS.Core.Models;
+using CMS.Core.Services.Config;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -8,7 +8,7 @@ namespace CMS.Tests.Services
     [TestClass]
     public class ConfigServiceTest
     {
-        ConfigService service = null;
+        IConfigService service = null;
 
         [TestInitialize]
         public void Init()
