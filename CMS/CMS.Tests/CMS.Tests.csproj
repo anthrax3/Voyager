@@ -112,9 +112,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CMS.Core\CMS.Core.csproj">
+    <ProjectReference Include="..\CMS.Web\CMS.Web.csproj">
       <Project>{83F14A73-7EA2-4EAD-8239-03765CC44435}</Project>
-      <Name>CMS.Core</Name>
+      <Name>CMS.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

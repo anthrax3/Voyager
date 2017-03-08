@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Core", "CMS.Core\CMS.Core.csproj", "{83F14A73-7EA2-4EAD-8239-03765CC44435}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Web", "CMS.Web\CMS.Web.csproj", "{83F14A73-7EA2-4EAD-8239-03765CC44435}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Tests", "CMS.Tests\CMS.Tests.csproj", "{CE77803C-6353-4B17-9289-B6C62DEB391F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{A63E199D-B4EB-4C36-9F96-6262DDD18CD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Core", "CMS.Core\CMS.Core.csproj", "{E68FE647-C3A5-4168-B904-5EA7DF0D3C09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,10 @@ Global
 		{CE77803C-6353-4B17-9289-B6C62DEB391F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE77803C-6353-4B17-9289-B6C62DEB391F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE77803C-6353-4B17-9289-B6C62DEB391F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68FE647-C3A5-4168-B904-5EA7DF0D3C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68FE647-C3A5-4168-B904-5EA7DF0D3C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68FE647-C3A5-4168-B904-5EA7DF0D3C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68FE647-C3A5-4168-B904-5EA7DF0D3C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

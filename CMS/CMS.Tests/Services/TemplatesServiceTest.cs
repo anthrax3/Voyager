@@ -1,12 +1,7 @@
-﻿using CMS.Core.Models;
-using CMS.Core.Services.TemplatesService;
+﻿using CMS.Web.Models;
+using CMS.Web.Services.TemplatesService;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CMS.Tests.Services
 {
