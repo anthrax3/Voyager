@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CMS.Core.Services.ComponentsService
+namespace CMS.Core.Services.Components
 {
     public interface IComponentsService
     {

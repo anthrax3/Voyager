@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CMS.Core.Services.PositionsService
+namespace CMS.Core.Services.Positions
 {
     public class PositionsService : IPositionsService
     {

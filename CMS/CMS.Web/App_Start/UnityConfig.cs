@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Practices.Unity;
+using CMS.Core.Services;
 
 namespace CMS.Web.App_Start
 {
@@ -31,11 +32,8 @@ namespace CMS.Web.App_Start
         /// change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
         public static void RegisterTypes(IUnityContainer container)
         {
-            //container.RegisterType<ILoggerService, NLogLogger>();
-            //container.RegisterType<IDatabaseContext, DatabaseContext>();
-            //container.RegisterType<ITemplatesService, TemplatesService>();
-            //container.RegisterType<IComponentsService, ComponentsService>(new PerThreadLifetimeManager());
-            //container.RegisterType<IPositionsService, PositionsService>();
+            var manager = new UnityManager();
+            manager.RegisterDependencies(container);
         }
     }
 }

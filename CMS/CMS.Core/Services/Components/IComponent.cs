@@ -2,7 +2,7 @@
 using System;
 using System.Data.Entity;
 
-namespace CMS.Core.Services.ComponentsService
+namespace CMS.Core.Services.Components
 {
     public interface IComponent
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMS.Core.Services.TemplatesService
+namespace CMS.Core.Services.Templates
 {
     public interface ITemplatesService
     {

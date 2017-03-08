@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace CMS.Core.Services.ConfigService
+namespace CMS.Core.Services.Config
 {
     public class ConfigService : IConfigService
     {

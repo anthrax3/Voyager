@@ -5,7 +5,7 @@ using System.Reflection;
 using CMS.Core.Models;
 using CMS.Core.Database;
 
-namespace CMS.Core.Services.ComponentsService
+namespace CMS.Core.Services.Components
 {
     public class ComponentsService : IComponentsService
     {

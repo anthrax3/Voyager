@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CMS.Core.Services.TemplatesService
+namespace CMS.Core.Services.Templates
 {
     public class TemplatesService : ITemplatesService
     {
