@@ -4,22 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CMS.Core.DB;
+using System.Data.Entity;
+using ComArticles.Models;
 
 namespace ComArticles
 {
     public class Main : IComponent
     {
-        public string Name
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public string Name { get; set; } = "ComArticles";
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+        public bool SetupDatabase(DbModelBuilder builder)
+        {
+            builder.Entity<ArticleModel>().ToTable("Articles");
+
+            return true;
         }
     }
 }

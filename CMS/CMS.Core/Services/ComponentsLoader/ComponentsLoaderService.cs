@@ -55,7 +55,7 @@ namespace CMS.Core.Services.ComponentsLoader
 
         public List<IComponent> GetLoadedComponents()
         {
-            return null;
+            return components;
         }
     }
 }

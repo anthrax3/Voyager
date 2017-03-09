@@ -8,5 +8,6 @@ namespace CMS.Core.Services.ComponentsManager
 {
     public interface IComponentsManagerService
     {
+
     }
 }

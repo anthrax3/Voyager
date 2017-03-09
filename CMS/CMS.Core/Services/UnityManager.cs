@@ -26,7 +26,7 @@ namespace CMS.Core.Services
             container.RegisterType<IDatabaseContext, DatabaseContext>();
             container.RegisterType<ITemplatesService, TemplatesService>();
             container.RegisterType<IComponentsLoaderService, ComponentsLoaderService>(
-                new InjectionConstructor(rootPath));
+                new ContainerControlledLifetimeManager(), new InjectionConstructor(rootPath));
             container.RegisterType<IPositionsService, PositionsService>();
             container.RegisterType<IComponentsManagerService, ComponentsManagerService>();
         }

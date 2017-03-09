@@ -1,7 +1,10 @@
-﻿using CMS.Core.Models;
+﻿using CMS.Core.Components;
+using CMS.Core.Models;
+using CMS.Core.Services.ComponentsLoader;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Microsoft.Practices.Unity;
 
 namespace CMS.Core.DB
 {
@@ -14,6 +17,7 @@ namespace CMS.Core.DB
         public virtual DbSet<ComponentActionModel> ComponentActions { get; set; }
         
         static String connectionStringCache = String.Empty;
+        IComponentsLoaderService componentsLoader = null;
 
         /// <summary>
         /// If connection with DB is open, returns true. Otherwise, returns false.
@@ -26,6 +30,12 @@ namespace CMS.Core.DB
         public DatabaseContext() : base("MainConnection")
         {
 
+        }
+
+        [InjectionConstructor]
+        public DatabaseContext(IComponentsLoaderService componentsLoader) : base("MainConnection")
+        {
+            this.componentsLoader = componentsLoader;
         }
 
         /// <summary>
@@ -53,6 +63,12 @@ namespace CMS.Core.DB
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             
+            var componentsList = componentsLoader.GetLoadedComponents();
+            foreach(IComponent com in componentsList)
+            {
+                com.SetupDatabase(modelBuilder);
+            }
+
             base.OnModelCreating(modelBuilder);
         }
     }

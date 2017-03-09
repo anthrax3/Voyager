@@ -7,5 +7,6 @@ namespace CMS.Core.Components
     public interface IComponent
     {
         String Name { get; set; }
+        bool SetupDatabase(DbModelBuilder builder);
     }
 }
