@@ -6,7 +6,7 @@ using Moq;
 namespace CMS.Tests.Services
 {
     [TestClass]
-    class ConfigServiceTest
+    public class ConfigServiceTest
     {
         IConfigService service = null;
 
