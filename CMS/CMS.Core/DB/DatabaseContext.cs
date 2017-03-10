@@ -13,8 +13,7 @@ namespace CMS.Core.DB
         public virtual DbSet<ConfigModel> Config { get; set; }
         public virtual DbSet<TemplateModel> Templates { get; set; }
         public virtual DbSet<ComponentModel> Components { get; set; }
-        public virtual DbSet<ComponentInstanceModel> ComponentInstances { get; set; }
-        public virtual DbSet<ComponentActionModel> ComponentActions { get; set; }
+        public virtual DbSet<ComponentActionsModel> ComponentActions { get; set; }
         
         static String connectionStringCache = String.Empty;
         IComponentsLoaderService componentsLoader = null;
