@@ -63,6 +63,10 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /y /d "$(ProjectDir)$(OutDir)*.dll" "$(SolutionDir)CMS.Web\Components\$(ProjectName)"</PostBuildEvent>

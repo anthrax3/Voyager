@@ -66,7 +66,6 @@ namespace CMS.Core.DB
             modelBuilder.Entity<ConfigModel>().ToTable("Config");
             modelBuilder.Entity<TemplateModel>().ToTable("Templates");
             modelBuilder.Entity<ComponentModel>().ToTable("Components");
-            modelBuilder.Entity<ComponentActionsModel>().ToTable("ComActions");
 
             base.OnModelCreating(modelBuilder);
         }

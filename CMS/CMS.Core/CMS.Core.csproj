@@ -73,7 +73,6 @@
     <Compile Include="DB\DatabaseContext.cs" />
     <Compile Include="DB\IDatabaseContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\ComponentActionsModel.cs" />
     <Compile Include="Models\ComponentModel.cs" />
     <Compile Include="Models\ConfigModel.cs" />
     <Compile Include="Models\TemplateModel.cs" />
