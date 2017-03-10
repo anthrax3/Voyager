@@ -35,5 +35,15 @@ namespace CMS.Core.Services.ComponentsManager
 
             return true;
         }
+
+        public CallResult CallComponent(CallParameters parameters)
+        {
+            var component = componentsLoader.GetComponent(parameters.ComponentName);
+            if (component == null)
+                return null;
+
+            var result = component.DoAction(parameters.ActionName, parameters.Parameters);
+            return result;
+        }
     }
 }

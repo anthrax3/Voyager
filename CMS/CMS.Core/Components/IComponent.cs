@@ -1,5 +1,7 @@
 ﻿using CMS.Core.DB;
+using CMS.Core.Services.ComponentsManager;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 
 namespace CMS.Core.Components
@@ -8,5 +10,6 @@ namespace CMS.Core.Components
     {
         String Name { get; set; }
         bool SetupDatabase(DbModelBuilder builder);
+        CallResult DoAction(String actionName, Dictionary<String, object> parameters);
     }
 }

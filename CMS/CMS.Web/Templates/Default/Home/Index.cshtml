@@ -2,4 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 
-Hello world!
+@Html.Action("Call", "Components", new
+{
+    componentName = "ComArticles",
+    action = "Something",
+    parameters = new Dictionary<String, object>()
+})

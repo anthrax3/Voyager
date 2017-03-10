@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CMS.Core.Services.ComponentsManager
 {
-    public interface IComponentsManagerService
+    public class CallResult
     {
-        bool ValidateLoadedComponents();
-        CallResult CallComponent(CallParameters parameters);
+        public String View { get; set; }
+        public object Model { get; set; }
     }
 }
