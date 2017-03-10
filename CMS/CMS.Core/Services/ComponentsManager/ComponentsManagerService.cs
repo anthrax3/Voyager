@@ -42,7 +42,8 @@ namespace CMS.Core.Services.ComponentsManager
             if (component == null)
                 return null;
 
-            var result = component.DoAction(parameters.ActionName, parameters.Parameters);
+            var coreState = new CoreState(db);
+            var result = component.DoAction(parameters, coreState);
             return result;
         }
     }

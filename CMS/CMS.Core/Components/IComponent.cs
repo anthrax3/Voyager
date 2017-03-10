@@ -10,6 +10,6 @@ namespace CMS.Core.Components
     {
         String Name { get; set; }
         bool SetupDatabase(DbModelBuilder builder);
-        CallResult DoAction(String actionName, Dictionary<String, object> parameters);
+        CallResult DoAction(CallParameters parameters, CoreState state);
     }
 }

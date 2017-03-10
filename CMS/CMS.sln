@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Web", "CMS.Web\CMS.Web.csproj", "{83F14A73-7EA2-4EAD-8239-03765CC44435}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E478C04A-19CD-4F87-B91E-51E42EB88F98} = {E478C04A-19CD-4F87-B91E-51E42EB88F98}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Tests", "CMS.Tests\CMS.Tests.csproj", "{CE77803C-6353-4B17-9289-B6C62DEB391F}"
 EndProject

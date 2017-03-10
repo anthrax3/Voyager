@@ -83,6 +83,7 @@
     <Compile Include="Services\ComponentsManager\CallParameters.cs" />
     <Compile Include="Services\ComponentsManager\CallResult.cs" />
     <Compile Include="Services\ComponentsManager\ComponentsManagerService.cs" />
+    <Compile Include="Services\ComponentsManager\CoreState.cs" />
     <Compile Include="Services\ComponentsManager\IComponentsManagerService.cs" />
     <Compile Include="Services\Config\ConfigService.cs" />
     <Compile Include="Services\Config\IConfigService.cs" />

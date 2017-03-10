@@ -15,12 +15,16 @@ namespace ComArticles
     {
         public string Name { get; set; } = "ComArticles";
 
-        public CallResult DoAction(string actionName, Dictionary<string, object> parameters)
+        public CallResult DoAction(CallParameters parameters, CoreState state)
         {
+            state.Database.Set<ArticleModel>().Add(new ArticleModel() { Title = "Test",
+            CreateTime = DateTime.Now, ModifyTime = DateTime.Now});
+            state.Database.Save();
+
             return new CallResult()
             {
                 View = "~/Components/ComArticles/Views/Index.cshtml",
-                Model = "Hello world, this is " + Name + " :) Action: " + actionName
+                Model = "Hello world, this is " + Name + " :) Action: " + parameters.ActionName
             };
         }
 
