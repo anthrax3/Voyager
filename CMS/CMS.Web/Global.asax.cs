@@ -16,8 +16,6 @@ namespace CMS.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        static readonly ILoggerService logger = 
-            UnityConfig.GetConfiguredContainer().Resolve<ILoggerService>();
         static readonly IComponentsLoaderService componentsLoaderService =
             UnityConfig.GetConfiguredContainer().Resolve<IComponentsLoaderService>();
 
@@ -36,15 +34,6 @@ namespace CMS.Web
             //Web bootstrap
             var webBootstrap = UnityConfig.GetConfiguredContainer().Resolve<WebBootstrap>();
             webBootstrap.Init();
-        }
-
-        void Application_Error(object sender, EventArgs e)
-        {
-            Exception exception = Server.GetLastError();
-            if (exception != null)
-            {
-                logger.Log(Level.Critical, exception);
-            }
         }
     }
 }

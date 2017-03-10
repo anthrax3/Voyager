@@ -10,10 +10,5 @@ namespace CMS.Core.Services.ComponentsManager
     public class CoreState
     {
         public IDatabaseContext Database = null;
-
-        public CoreState(IDatabaseContext db)
-        {
-            this.Database = db;
-        }
     }
 }
