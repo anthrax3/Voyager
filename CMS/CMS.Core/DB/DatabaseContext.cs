@@ -10,11 +10,6 @@ namespace CMS.Core.DB
 {
     internal class DatabaseContext : DbContext, IDatabaseContext
     {
-        public virtual DbSet<ConfigModel> Config { get; set; }
-        public virtual DbSet<TemplateModel> Templates { get; set; }
-        public virtual DbSet<ComponentModel> Components { get; set; }
-        public virtual DbSet<ComponentActionsModel> ComponentActions { get; set; }
-        
         static String connectionStringCache = String.Empty;
         IComponentsLoaderService componentsLoader = null;
 
@@ -67,6 +62,11 @@ namespace CMS.Core.DB
             {
                 com.SetupDatabase(modelBuilder);
             }
+
+            modelBuilder.Entity<ConfigModel>().ToTable("Config");
+            modelBuilder.Entity<TemplateModel>().ToTable("Templates");
+            modelBuilder.Entity<ComponentModel>().ToTable("Components");
+            modelBuilder.Entity<ComponentActionsModel>().ToTable("ComActions");
 
             base.OnModelCreating(modelBuilder);
         }
