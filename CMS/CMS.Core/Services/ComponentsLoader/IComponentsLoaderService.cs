@@ -6,7 +6,7 @@ namespace CMS.Core.Services.ComponentsLoader
 {
     public interface IComponentsLoaderService
     {
-        void LoadComponents();
+        bool LoadComponents();
 
         T GetComponent<T>();
         IComponent GetComponent(String name);

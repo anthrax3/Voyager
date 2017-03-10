@@ -1,5 +1,6 @@
 ﻿using CMS.Core.Components;
 using CMS.Core.DB;
+using CMS.Core.Models;
 using CMS.Core.Services.ComponentsLoader;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,21 @@ namespace CMS.Core.Services.ComponentsManager
         {
             this.db = db;
             this.componentsLoader = componentsLoader;
+        }
+
+        /// <summary>
+        /// Returns false if any of the loaded component is not present in database.
+        /// </summary>
+        public bool ValidateLoadedComponents()
+        {
+            var loadedComponets = componentsLoader.GetLoadedComponents();
+            foreach(IComponent com in loadedComponets)
+            {
+                if (!db.Set<ComponentModel>().Any(p => p.Name == com.Name))
+                    return false;
+            }
+
+            return true;
         }
     }
 }
