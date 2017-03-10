@@ -205,7 +205,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Templates\Web.config" />
-    <Content Include="Templates\Default\Shared\_ViewStart.cshtml" />
     <Content Include="Templates\Default\Shared\Error.cshtml" />
     <Content Include="Templates\Default\Shared\_Layout.cshtml" />
     <Content Include="Templates\Default\Home\Index.cshtml" />

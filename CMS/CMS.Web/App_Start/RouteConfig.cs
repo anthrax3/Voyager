@@ -12,6 +12,7 @@ namespace CMS.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{file}.css");
 
             routes.MapRoute(
                 name: "Default",

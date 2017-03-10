@@ -17,7 +17,6 @@ namespace CMS.Web.Controllers
 
         public ActionResult Index()
         {
-            throw new Exception("TEST TEST TEST");
             return View();
         }
     }
