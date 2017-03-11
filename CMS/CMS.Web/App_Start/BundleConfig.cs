@@ -17,9 +17,18 @@ namespace CMS.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/admin").Include(
+                        "~/Areas/Administrator/Scripts/custom.js"));
+
             bundles.Add(new StyleBundle("~/styles/bootstrap").Include(
                         "~/Content/bootstrap.css",
                         "~/Content/bootstrap-theme.css"));
+
+            bundles.Add(new StyleBundle("~/styles/font-awesome").Include(
+                        "~/Content/font-awesome.css"));
+
+            bundles.Add(new StyleBundle("~/styles/admin").Include(
+                        "~/Areas/Administrator/Content/custom.css"));
         }
     }
 }

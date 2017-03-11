@@ -27,7 +27,9 @@ namespace CMS.Core.Services.Templates
             
             var viewLocations = new List<String>() {
                 "~/Templates/" + activeTemplate.DirName + "/{1}/{0}.cshtml",
-                "~/Templates/" + activeTemplate.DirName + "/Shared/{0}.cshtml"
+                "~/Templates/" + activeTemplate.DirName + "/Shared/{0}.cshtml",
+                "~/Areas/Administrator/Views/{1}/{0}.cshtml",
+                "~/Areas/Administrator/Views/Shared/{0}.cshtml"
             };
 
             return viewLocations;

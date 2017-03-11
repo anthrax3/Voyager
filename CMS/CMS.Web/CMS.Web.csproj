@@ -162,6 +162,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
+    <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
     <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\LogErrorFilter.cs" />
@@ -174,6 +176,11 @@
     <Compile Include="WebBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Administrator\Content\custom.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Areas\Administrator\Content\logo.png" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Administrator\Scripts\custom.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -186,6 +193,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Administrator\Views\web.config" />
+    <Content Include="Areas\Administrator\Views\Home\Index.cshtml" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Areas\Administrator\Views\Shared\_Layout.cshtml" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -219,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administrator\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
