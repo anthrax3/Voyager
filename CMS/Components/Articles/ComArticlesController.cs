@@ -15,10 +15,5 @@ namespace ComArticles
         {
 
         }
-
-        public ActionResult Index()
-        {
-            return View("~/Components/ComArticles/Views/Index.cshtml");
-        }
     }
 }

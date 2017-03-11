@@ -82,7 +82,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="Models\ArticleModel.cs" />
-    <Compile Include="Models\TestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComArticlesController.cs" />
   </ItemGroup>
