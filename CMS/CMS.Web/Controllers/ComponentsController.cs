@@ -27,6 +27,8 @@ namespace CMS.Web.Controllers
             };
 
             var actionResult = componentsManager.CallComponent(callParameters);
+            var test = actionResult.Model;
+            var zxc = actionResult.View;
             return PartialView(actionResult.View, actionResult.Model);
         }
     }

@@ -6,6 +6,7 @@ using CMS.Core.Models;
 using CMS.Core.DB;
 using CMS.Core.Components;
 using System.IO;
+using System.Web.Compilation;
 
 namespace CMS.Core.Services.ComponentsLoader
 {
@@ -25,27 +26,16 @@ namespace CMS.Core.Services.ComponentsLoader
         /// </summary>
         public bool LoadComponents()
         {
-            var folders = Directory.GetDirectories(rootPath + "Components");
-            foreach(String componentDir in folders)
+            var assembliesList = AppDomain.CurrentDomain.GetAssemblies();
+            foreach(Assembly assembly in assembliesList)
             {
-                var files = Directory.GetFiles(componentDir);
-                foreach(String f in files)
-                {
-                    var fileName = f.Split('\\').Last();
-                    if (!fileName.StartsWith("Com"))
-                        continue;
-
-                    var dll = Assembly.LoadFile(f);
-                    var main = dll.GetTypes().FirstOrDefault(p => p.IsClass &&
-                                p.GetInterfaces().Contains(typeof(IComponent)));
-                    if (main == null)
-                        return false;
-
-                    var instance = (IComponent)Activator.CreateInstance(main);
-
-                    components.Add(instance);
-                    break;
-                }
+                var types = assembly.GetTypes();
+                var main = types.FirstOrDefault(p => p.IsClass &&
+                           p.GetInterfaces().Contains(typeof(IComponent)));
+                if (main == null)
+                    continue;
+                var instance = (IComponent)Activator.CreateInstance(main);
+                components.Add(instance);
             }
 
             return true;

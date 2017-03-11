@@ -3,6 +3,8 @@ using Microsoft.Practices.Unity;
 using CMS.Core.Services;
 using CMS.Web.Services.ViewEngine;
 using System.Web;
+using CMS.Web.Filters;
+using System.Web.Mvc;
 
 namespace CMS.Web.App_Start
 {
@@ -38,7 +40,7 @@ namespace CMS.Web.App_Start
             var coreUnityManager = new UnityManager();
             coreUnityManager.RegisterCoreDependencies(container, 
                 HttpRuntime.AppDomainAppPath);
-
+            
             //Web services
             container.RegisterType<IViewEngineService, ViewEngineService>();
         }

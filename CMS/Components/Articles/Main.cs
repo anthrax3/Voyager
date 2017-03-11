@@ -24,7 +24,7 @@ namespace ComArticles
             return new CallResult()
             {
                 View = "~/Components/ComArticles/Views/Index.cshtml",
-                Model = "Hello world, this is " + Name + " :) Action: " + parameters.ActionName
+                Model = new TestModel() { Name = "X", Age = 12 }
             };
         }
 
