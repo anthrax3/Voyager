@@ -15,21 +15,5 @@ namespace CMS.Web.Controllers
         {
             this.componentsManager = componentsManager;
         }
-
-        public PartialViewResult Call(String componentName, String action, 
-                                      Dictionary<String, object> parameters)
-        {
-            var callParameters = new CallParameters()
-            {
-                ComponentName = componentName,
-                ActionName = action,
-                Parameters = parameters
-            };
-
-            var actionResult = componentsManager.CallComponent(callParameters);
-            var test = actionResult.Model;
-            var zxc = actionResult.View;
-            return PartialView(actionResult.View, actionResult.Model);
-        }
     }
 }

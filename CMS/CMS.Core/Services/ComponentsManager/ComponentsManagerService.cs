@@ -35,23 +35,5 @@ namespace CMS.Core.Services.ComponentsManager
 
             return true;
         }
-
-        /// <summary>
-        /// Call component action. Returns null if passed component name not exist.
-        /// </summary>
-        public CallResult CallComponent(CallParameters parameters)
-        {
-            var component = componentsLoader.GetComponent(parameters.ComponentName);
-            if (component == null)
-                return null;
-
-            var coreState = new CoreState()
-            {
-                Database = db
-            };
-
-            var result = component.DoAction(parameters, coreState);
-            return result;
-        }
     }
 }

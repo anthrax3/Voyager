@@ -16,11 +16,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-[assembly: PreApplicationStartMethod(typeof(Initializer), "Initialize")]
-
 namespace CMS.Web
 {
-
     public class MvcApplication : System.Web.HttpApplication
     {
         static readonly IComponentsLoaderService componentsLoaderService =
@@ -38,20 +35,9 @@ namespace CMS.Web
 
             componentsLoaderService.LoadComponents();
 
-            var zxc = AppDomain.CurrentDomain.GetAssemblies();
-
             //Web bootstrap
             var webBootstrap = UnityConfig.GetConfiguredContainer().Resolve<WebBootstrap>();
             webBootstrap.Init();
-        }
-    }
-
-    public class Initializer
-    {
-        public static void Initialize()
-        {
-            //var asm = Assembly.LoadFrom("C:\\Users\\Pawel\\Desktop\\CMS\\CMS\\CMS.Web\\bin/ComArticles.dll");
-            //BuildManager.AddReferencedAssembly(asm);
         }
     }
 }
