@@ -6,6 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
     <link rel="stylesheet" type="text/css" href="Templates/Default/Style/style.css" />
 
+    @Styles.Render("~/styles/bootstrap")
     @RenderSection("styles", required: false)
 </head>
 
@@ -38,6 +39,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery-validate")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
