@@ -19,7 +19,7 @@ body {
 
  #wrapper {
     width: 100%;
-    margin-top:50px;
+    margin-top: 10px;
 }
 
 #page-wrapper {
@@ -33,7 +33,7 @@ body {
     margin:10px 20px 10px 0px;
     background-color:#fff!important;
     padding:10px;
-    min-height:1050px;
+    min-height:200px;
 }
 .pad-top {
     padding-top:15px;
@@ -48,10 +48,10 @@ body {
 }
 
 .sidebar-collapse > .nav > li > a {
-	padding:15px 10px;
+	padding:5px 10px;
     color: #214761;
-font-weight: 900;
-font-size: 16px;
+font-weight: 600;
+font-size: 14px;
 }
 .sidebar-collapse > .nav > li {
 	border-bottom:1px solid #e1e1e1;
@@ -72,7 +72,7 @@ font-size: 16px;
 
 background-color: #214761;
 border-color: #F0F0F0;
-min-height: 80px;
+min-height: 55px;
 }
 
 
@@ -82,10 +82,9 @@ min-height: 80px;
 .logout-spn {
     float:right;
     color:#fff;
-    font-size:25px;
-    font-weight:800;
+    font-size:18px;
     margin:20px;
-    margin: 10px 25px 10px 50px;
+    margin: 13px 25px 10px 50px;
 }
     .logout-spn a {
         text-decoration:none;
@@ -136,7 +135,7 @@ min-height: 80px;
      #page-wrapper{
                margin: 0 0 0 260px;
         padding: 15px 30px;
-        min-height: 1050px;
+        min-height: 400px;
 		
     }
 	
@@ -151,4 +150,10 @@ min-height: 80px;
  
 }
 
+.text-logo{
+    color: white;
+    font-size: 30px;
+    padding-top:13px;
+    padding-left: 10px
+}
 
