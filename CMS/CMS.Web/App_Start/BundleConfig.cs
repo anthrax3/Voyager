@@ -8,6 +8,7 @@ namespace CMS.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //Scripts section
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -20,6 +21,7 @@ namespace CMS.Web
             bundles.Add(new ScriptBundle("~/bundles/admin").Include(
                         "~/Areas/Administrator/Scripts/custom.js"));
 
+            //Styles section
             bundles.Add(new StyleBundle("~/styles/bootstrap").Include(
                         "~/Content/bootstrap.css",
                         "~/Content/bootstrap-theme.css"));

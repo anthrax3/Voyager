@@ -17,7 +17,8 @@ namespace CMS.Web.Areas.Administrator
             context.MapRoute(
                 "Administrator_default",
                 "Administrator/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "CMS.Web.Areas.Administrator.Controllers" }
             );
         }
     }
