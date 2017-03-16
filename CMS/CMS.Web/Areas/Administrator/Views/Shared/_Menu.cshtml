@@ -1,6 +1,8 @@
 ﻿@model List<CMS.Web.Areas.Administrator.ViewModels.MenuItemViewModel>
 
-@for(int i=0; i<Model.Count; i++)
+@for (int i = 0; i < Model.Count; i++)
 {
-    @Model[i].Name
+    <li>
+        @Html.ActionLink(Model[i].Name, Model[i].Action, Model[i].Controller, new { area = "" }, null)
+    </li>
 }

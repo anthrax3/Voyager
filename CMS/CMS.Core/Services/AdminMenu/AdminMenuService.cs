@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CMS.Core.Services.AdminMenu
 {
-    internal class AdminMenuService
+    internal class AdminMenuService : IAdminMenuService
     {
         IDatabaseContext db = null;
         public AdminMenuService(IDatabaseContext db)

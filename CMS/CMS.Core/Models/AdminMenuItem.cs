@@ -13,6 +13,7 @@ namespace CMS.Core.Models
         public ComponentModel Component { get; set; }
 
         public String Name { get; set; }
+        public String Controller { get; set; }
         public String Action { get; set; }
     }
 }

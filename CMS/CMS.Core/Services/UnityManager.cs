@@ -1,4 +1,5 @@
 ﻿using CMS.Core.DB;
+using CMS.Core.Services.AdminMenu;
 using CMS.Core.Services.ComponentsLoader;
 using CMS.Core.Services.ComponentsManager;
 using CMS.Core.Services.Log;
@@ -29,6 +30,7 @@ namespace CMS.Core.Services
                 new ContainerControlledLifetimeManager(), new InjectionConstructor(rootPath));
             container.RegisterType<IPositionsService, PositionsService>();
             container.RegisterType<IComponentsManagerService, ComponentsManagerService>();
+            container.RegisterType<IAdminMenuService, AdminMenuService>();
         }
     }
 }

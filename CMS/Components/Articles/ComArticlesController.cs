@@ -15,5 +15,10 @@ namespace ComArticles
         {
 
         }
+
+        public ActionResult TestAction()
+        {
+            return null;
+        }
     }
 }
