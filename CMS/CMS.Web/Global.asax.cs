@@ -33,10 +33,12 @@ namespace CMS.Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new ExtendedRazorViewEngine());
 
+            var unityContainer = UnityConfig.GetConfiguredContainer();
             componentsLoaderService.LoadComponents();
+            componentsLoaderService.InitComponents(unityContainer);
 
             //Web bootstrap
-            var webBootstrap = UnityConfig.GetConfiguredContainer().Resolve<WebBootstrap>();
+            var webBootstrap = unityContainer.Resolve<WebBootstrap>();
             webBootstrap.Init();
         }
     }

@@ -9,16 +9,11 @@ using System.Web.Mvc;
 
 namespace ComArticles
 {
-    public class ComArticlesController : Controller
+    public class FrontController : Controller
     {
-        public ComArticlesController()
+        public FrontController()
         {
 
-        }
-
-        public ActionResult TestAction(String optionalData)
-        {
-            return View("~/Components/ComArticles/Views/Index.cshtml");
         }
     }
 }

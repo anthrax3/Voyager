@@ -1,4 +1,5 @@
 ﻿using CMS.Core.Components;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 
@@ -11,5 +12,6 @@ namespace CMS.Core.Services.ComponentsLoader
         T GetComponent<T>();
         IComponent GetComponent(String name);
         List<IComponent> GetLoadedComponents();
+        void InitComponents(IUnityContainer container);
     }
 }

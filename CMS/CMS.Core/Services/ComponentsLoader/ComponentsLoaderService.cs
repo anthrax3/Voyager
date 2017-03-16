@@ -7,6 +7,7 @@ using CMS.Core.DB;
 using CMS.Core.Components;
 using System.IO;
 using System.Web.Compilation;
+using Microsoft.Practices.Unity;
 
 namespace CMS.Core.Services.ComponentsLoader
 {
@@ -64,6 +65,14 @@ namespace CMS.Core.Services.ComponentsLoader
         public List<IComponent> GetLoadedComponents()
         {
             return components;
+        }
+
+        public void InitComponents(IUnityContainer container)
+        {
+            for(int i=0; i<components.Count; i++)
+            {
+                components[i].SetupUnity(container);
+            }
         }
     }
 }

@@ -8,10 +8,11 @@ using CMS.Core.DB;
 using System.Data.Entity;
 using ComArticles.Models;
 using CMS.Core.Services.ComponentsManager;
+using Microsoft.Practices.Unity;
 
 namespace ComArticles
 {
-    public class Main : IComponent
+    public class Setup : IComponent
     {
         public string Name { get; set; } = "ComArticles";
 
@@ -20,6 +21,11 @@ namespace ComArticles
             builder.Entity<ArticleModel>().ToTable("Articles");
 
             return true;
+        }
+
+        public void SetupUnity(IUnityContainer container)
+        {
+
         }
     }
 }
