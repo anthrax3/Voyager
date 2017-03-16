@@ -30,5 +30,10 @@ namespace ComArticles
 
             return View("~/Components/ComArticles/Views/Admin/ArticlesList.cshtml", viewModelList);
         }
+
+        public ActionResult ArticleEdit(String alias)
+        {
+            return View("~/Components/ComArticles/Views/Admin/ArticleEdit.cshtml");
+        }
     }
 }

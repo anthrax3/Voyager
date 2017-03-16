@@ -119,6 +119,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Views\Admin\ArticleEdit.cshtml" />
     <None Include="Views\Admin\ArticlesList.cshtml" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
