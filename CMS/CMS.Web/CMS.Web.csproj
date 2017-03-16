@@ -165,6 +165,7 @@
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administrator\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Administrator\ViewModels\ComponentSiteDataViewModel.cs" />
     <Compile Include="Areas\Administrator\ViewModels\MenuItemViewModel.cs" />
     <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -202,6 +203,7 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Areas\Administrator\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administrator\Views\Shared\_Menu.cshtml" />
+    <Content Include="Areas\Administrator\Views\Home\ComponentView.cshtml" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

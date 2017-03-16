@@ -3,6 +3,9 @@
 @for (int i = 0; i < Model.Count; i++)
 {
     <li>
-        @Html.ActionLink(Model[i].Name, Model[i].Action, Model[i].Controller, new { area = "" }, null)
+        @Html.ActionLink(Model[i].Name, "ComponentView", "Home", new { targetController = Model[i].Controller,
+                                                        targetAction = Model[i].Action,
+                                                        targetParameters = Model[i].Parameters }, 
+                                                        null)
     </li>
 }

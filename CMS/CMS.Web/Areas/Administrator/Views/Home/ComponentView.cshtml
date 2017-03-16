@@ -1,0 +1,7 @@
+﻿@model CMS.Web.Areas.Administrator.ViewModels.ComponentSiteDataViewModel
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@Html.Action(Model.Action, Model.Controller, new { area = "", parameters = Model.Parameters })

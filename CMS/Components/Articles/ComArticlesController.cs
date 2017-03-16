@@ -16,9 +16,9 @@ namespace ComArticles
 
         }
 
-        public ActionResult TestAction()
+        public ActionResult TestAction(List<String> parameters)
         {
-            return null;
+            return View("~/Components/ComArticles/Views/Index.cshtml");
         }
     }
 }
