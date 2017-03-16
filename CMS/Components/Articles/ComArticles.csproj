@@ -96,11 +96,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminArticlesController.cs" />
+    <Compile Include="Services\ArticlesService.cs" />
+    <Compile Include="Services\IArticlesService.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\FrontController.cs" />
+    <Compile Include="Controllers\FrontArticlesController.cs" />
+    <Compile Include="ViewModels\ArticleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CMS.Core\CMS.Core.csproj">
@@ -112,13 +115,13 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Views\Index.cshtml" />
+    <None Include="Views\Admin\ArticlesList.cshtml" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="Views\Front\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -9,6 +9,7 @@ using System.Data.Entity;
 using ComArticles.Models;
 using CMS.Core.Services.ComponentsManager;
 using Microsoft.Practices.Unity;
+using ComArticles.Services;
 
 namespace ComArticles
 {
@@ -25,7 +26,7 @@ namespace ComArticles
 
         public void SetupUnity(IUnityContainer container)
         {
-
+            container.RegisterType<IArticlesService, ArticlesService>();
         }
     }
 }

@@ -9,9 +9,9 @@ using System.Web.Mvc;
 
 namespace ComArticles
 {
-    public class FrontController : Controller
+    public class FrontArticlesController : Controller
     {
-        public FrontController()
+        public FrontArticlesController()
         {
 
         }
