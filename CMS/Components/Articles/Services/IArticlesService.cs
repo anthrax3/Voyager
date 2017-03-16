@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComArticles.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace ComArticles.Services
 {
     public interface IArticlesService
     {
+        List<ArticleModel> GetAllArticles();
     }
 }

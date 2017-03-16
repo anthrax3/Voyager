@@ -1,4 +1,5 @@
 ﻿using CMS.Core.DB;
+using ComArticles.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace ComArticles.Services
         public ArticlesService(IDatabaseContext db)
         {
             this.db = db;
+        }
+
+        public List<ArticleModel> GetAllArticles()
+        {
+            return db.Set<ArticleModel>().ToList();
         }
     }
 }

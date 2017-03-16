@@ -1,5 +1,7 @@
 ﻿using ComArticles.Models;
 using ComArticles.Services;
+using ComArticles.ViewModels;
+using Omu.ValueInjecter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,15 @@ namespace ComArticles
 
         public ActionResult ArticlesList()
         {
-            return View("~/Components/ComArticles/Views/Admin/ArticlesList.cshtml");
+            var models = articlesService.GetAllArticles();
+
+            List<ArticleViewModel> viewModelList = models
+                .Select(x => new ArticleViewModel()
+                .InjectFrom(x))
+                .Cast<ArticleViewModel>()
+                .ToList();
+
+            return View("~/Components/ComArticles/Views/Admin/ArticlesList.cshtml", viewModelList);
         }
     }
 }

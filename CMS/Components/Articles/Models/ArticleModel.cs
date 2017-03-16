@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ComArticles.Models
 {
-    internal class ArticleModel
+    public class ArticleModel
     {
         public int ID { get; set; }
         public String Title { get; set; }
