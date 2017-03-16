@@ -164,6 +164,8 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Areas\Administrator\AdministratorAreaRegistration.cs" />
     <Compile Include="Areas\Administrator\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Administrator\Controllers\LayoutController.cs" />
+    <Compile Include="Areas\Administrator\ViewModels\MenuItemViewModel.cs" />
     <Compile Include="Controllers\ComponentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\LogErrorFilter.cs" />
@@ -199,6 +201,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Areas\Administrator\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Administrator\Views\Shared\_Menu.cshtml" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -233,6 +236,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administrator\Models\" />
+    <Folder Include="Areas\Administrator\Views\Layout\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
