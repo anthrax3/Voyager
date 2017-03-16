@@ -15,13 +15,13 @@ namespace CMS.Web.Areas.Administrator.Controllers
         }
 
         public ActionResult ComponentView(String targetController, 
-                String targetAction, List<String> targetParameters)
+                String targetAction, String optionalData)
         {
             var data = new ComponentSiteDataViewModel()
             {
                 Controller = targetController,
                 Action = targetAction,
-                Parameters = targetParameters
+                OptionalData = optionalData
             };
 
             return View(data);

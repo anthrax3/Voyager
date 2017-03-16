@@ -9,6 +9,6 @@ namespace CMS.Web.Areas.Administrator.ViewModels
     {
         public String Controller { get; set; }
         public String Action { get; set; }
-        public List<String> Parameters { get; set; }
+        public String OptionalData { get; set; }
     }
 }

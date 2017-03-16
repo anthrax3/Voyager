@@ -16,7 +16,7 @@ namespace ComArticles
 
         }
 
-        public ActionResult TestAction(List<String> parameters)
+        public ActionResult TestAction(String optionalData)
         {
             return View("~/Components/ComArticles/Views/Index.cshtml");
         }

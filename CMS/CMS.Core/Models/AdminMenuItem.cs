@@ -15,5 +15,6 @@ namespace CMS.Core.Models
         public String Name { get; set; }
         public String Controller { get; set; }
         public String Action { get; set; }
+        public String OptionalData { get; set; }
     }
 }

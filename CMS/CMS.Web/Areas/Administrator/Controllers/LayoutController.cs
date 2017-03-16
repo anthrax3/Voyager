@@ -21,8 +21,9 @@ namespace CMS.Web.Areas.Administrator.Controllers
         {
             var models = adminMenuService.GetMenuItems();
             List<MenuItemViewModel> viewModelList = models
-                .Select(x => new MenuItemViewModel().InjectFrom(x))
-                                                    .Cast<MenuItemViewModel>()
+                .Select(x => new MenuItemViewModel()
+                .InjectFrom(x))
+                .Cast<MenuItemViewModel>()
                 .ToList();
 
             return View("_Menu", viewModelList);

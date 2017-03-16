@@ -5,7 +5,7 @@
     <li>
         @Html.ActionLink(Model[i].Name, "ComponentView", "Home", new { targetController = Model[i].Controller,
                                                         targetAction = Model[i].Action,
-                                                        targetParameters = Model[i].Parameters }, 
+                                                        optionalData = Model[i].OptionalData }, 
                                                         null)
     </li>
 }

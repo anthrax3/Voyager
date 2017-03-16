@@ -4,4 +4,4 @@
     Layout = "../Shared/_Layout.cshtml";
 }
 
-@Html.Action(Model.Action, Model.Controller, new { area = "", parameters = Model.Parameters })
+@Html.Action(Model.Action, Model.Controller, new { area = "", optionalData = Model.OptionalData })
