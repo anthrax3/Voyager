@@ -79,6 +79,8 @@
     <Compile Include="Models\ConfigModel.cs" />
     <Compile Include="Models\TemplateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AdminMenu\AdminMenuService.cs" />
+    <Compile Include="Services\AdminMenu\IAdminMenuService.cs" />
     <Compile Include="Services\ComponentsLoader\ComponentsLoaderService.cs" />
     <Compile Include="Components\IComponent.cs" />
     <Compile Include="Services\ComponentsLoader\IComponentsLoaderService.cs" />
