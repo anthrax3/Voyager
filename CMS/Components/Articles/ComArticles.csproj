@@ -121,6 +121,8 @@
     <None Include="packages.config" />
     <None Include="Views\Admin\ArticleEdit.cshtml" />
     <None Include="Views\Admin\ArticlesList.cshtml" />
+    <Content Include="Content\published-false.png" />
+    <Content Include="Content\published-true.png" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -131,7 +133,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /y /d "$(ProjectDir)$(OutDir)*.dll" "$(SolutionDir)CMS.Web\bin"
-xcopy /y /d /E "$(ProjectDir)Views\*.*" "$(SolutionDir)CMS.Web\Components\$(ProjectName)\Views\*.*"</PostBuildEvent>
+xcopy /y /d /E "$(ProjectDir)Views\*.*" "$(SolutionDir)CMS.Web\Components\$(ProjectName)\Views\*.*"
+xcopy /y /d /E "$(ProjectDir)Content\*.*" "$(SolutionDir)CMS.Web\Components\$(ProjectName)\Content\*.*"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -8,6 +8,7 @@ namespace ComArticles.ViewModels
 {
     public class ArticleViewModel
     {
+        public bool Published { get; set; }
         public String Title { get; set; }
         public String Alias { get; set; }
         public DateTime CreateTime { get; set; }

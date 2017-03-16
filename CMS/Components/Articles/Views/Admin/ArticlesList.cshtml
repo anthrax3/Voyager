@@ -10,6 +10,7 @@
         <thead>
             <tr>
                 <th>Title</th>
+                <th>Published</th>
                 <th>Create time</th>
                 <th>Modify time</th>
             </tr>
@@ -24,6 +25,16 @@
                                                                                         optionalData = Model[i].Alias,
                                                                                         area = "Administrator"
                         }, null)
+                    </td>
+                    <td>
+                        @if(Model[i].Published)
+                        {
+                            <img src="~/Components/ComArticles/Content/published-true.png" />
+                        }
+                        else
+                        {
+                            <img src="~/Components/ComArticles/Content/published-false.png" />
+                        }
                     </td>
                     <td>@Model[i].CreateTime</td>
                     <td>@Model[i].ModifyTime</td> 

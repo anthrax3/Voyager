@@ -9,6 +9,7 @@ namespace ComArticles.Models
     public class ArticleModel
     {
         public int ID { get; set; }
+        public bool Published { get; set; }
         public String Title { get; set; }
         public String Alias { get; set; }
         public DateTime CreateTime { get; set; }
