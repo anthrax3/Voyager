@@ -253,3 +253,6 @@ paket-files/
 
 # Components folder
 CMS/CMS.Web/Components
+
+# TinyMCE
+CMS/CMS.Web/Scripts/tinymce
