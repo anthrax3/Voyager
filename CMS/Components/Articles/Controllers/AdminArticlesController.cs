@@ -36,9 +36,16 @@ namespace ComArticles
             return View("~/Components/ComArticles/Views/Admin/ArticleEdit.cshtml");
         }
 
-        public ActionResult ChangePublishedArticleState(String alias)
+        public ActionResult ChangePublishedArticleState(String alias, bool published)
         {
-            return Json("[]");
+            if (!articlesService.Exist(alias))
+                return Json("{ \"result\": \"Alias not exist\" }");
+
+            var result = articlesService.ChangeArticleState(alias, published);
+            if (!result)
+                return Json("{ \"result\": \"Undefined error\" }");
+
+            return Json("{ \"result\": \"Success\" }");
         }
     }
 }

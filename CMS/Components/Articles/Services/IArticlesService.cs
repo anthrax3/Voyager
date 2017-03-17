@@ -10,5 +10,7 @@ namespace ComArticles.Services
     public interface IArticlesService
     {
         List<ArticleModel> GetAllArticles();
+        bool Exist(String alias);
+        bool ChangeArticleState(String alias, bool published);
     }
 }

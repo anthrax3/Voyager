@@ -31,14 +31,14 @@
                         }, null)
                     </td>
                     <td>
-                        <a href="#" class="changeArticleStatusLink" data-alias="@Model[i].Alias">
+                        <a href="#" class="changeArticleStatusLink" data-alias="@Model[i].Alias" data-published="@Model[i].Published">
                             @if (Model[i].Published)
                             {
-                                <img name="@Model[i].Alias" class="article-list-published published-true"/>
+                                <img class="article-list-published published-true"/>
                             }
                             else
                             {
-                                <img name="@Model[i].Alias" class="article-list-published published-false" />
+                                <img class="article-list-published published-false" />
                             }
                         </a>
                     </td>

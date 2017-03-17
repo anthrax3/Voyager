@@ -16,6 +16,22 @@ namespace ComArticles.Services
             this.db = db;
         }
 
+        public bool ChangeArticleState(string alias, bool published)
+        {
+            var article = db.Set<ArticleModel>().FirstOrDefault(p => p.Alias == alias);
+            if (article == null)
+                return false;
+            article.Published = published;
+            db.Save();
+
+            return true;
+        }
+
+        public bool Exist(string alias)
+        {
+            return db.Set<ArticleModel>().Any(p => p.Alias == alias);
+        }
+
         public List<ArticleModel> GetAllArticles()
         {
             return db.Set<ArticleModel>().ToList();
