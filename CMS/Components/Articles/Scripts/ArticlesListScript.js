@@ -19,7 +19,7 @@
             },
             error: function () {
                 changeArticleState($(this), imgChild, currentPublished);
-                alert(data);
+                alert("AJAX error");
             }
         });
 

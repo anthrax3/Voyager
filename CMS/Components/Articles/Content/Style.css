@@ -10,3 +10,14 @@
 .published-false{
     background-image: url("/Components/ComArticles/Content/published-false.png");
 }
+
+.button-icon{
+    width: 33px;
+    height: 25px;
+    padding: 0;
+}
+
+.trash-icon{
+    color: rgb(200, 0, 0);
+    font-size: 22px;
+}

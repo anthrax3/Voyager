@@ -16,6 +16,7 @@
                 <th>Published</th>
                 <th>Create time</th>
                 <th>Modify time</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -43,7 +44,12 @@
                         </a>
                     </td>
                     <td>@Model[i].CreateTime</td>
-                    <td>@Model[i].ModifyTime</td> 
+                    <td>@Model[i].ModifyTime</td>
+                    <td>
+                        <div class="btn btn-default button-icon">
+                            <i class="fa fa-trash-o trash-icon"></i>
+                        </div>
+                    </td> 
                 </tr>
             }
         </tbody>
