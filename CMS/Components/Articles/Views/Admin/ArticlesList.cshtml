@@ -1,4 +1,7 @@
 ﻿@model List<ComArticles.ViewModels.ArticleViewModel>
+<link rel="stylesheet" type="text/css" 
+      href="~/Components/ComArticles/Content/Style.css">
+
 <div class="row">
     <div class="col-md-12">
         <h2>ARTICLES</h2>
@@ -20,21 +23,24 @@
             {
                 <tr>
                     <td>
-                        @Html.ActionLink(Model[i].Title, "ComponentView", "Home", new { targetController = "AdminArticles",
-                                                                                        targetAction = "ArticleEdit",
-                                                                                        optionalData = Model[i].Alias,
-                                                                                        area = "Administrator"
+                        @Html.ActionLink(Model[i].Title, "ComponentView", "Home", 
+                                        new { targetController = "AdminArticles",
+                                              targetAction = "ArticleEdit",
+                                              optionalData = Model[i].Alias,
+                                              area = "Administrator"
                         }, null)
                     </td>
                     <td>
-                        @if(Model[i].Published)
-                        {
-                            <img src="~/Components/ComArticles/Content/published-true.png" />
-                        }
-                        else
-                        {
-                            <img src="~/Components/ComArticles/Content/published-false.png" />
-                        }
+                        <a href="#" class="changeArticleStatusLink" data-alias="@Model[i].Alias">
+                            @if (Model[i].Published)
+                            {
+                                <img name="@Model[i].Alias" class="article-list-published published-true"/>
+                            }
+                            else
+                            {
+                                <img name="@Model[i].Alias" class="article-list-published published-false" />
+                            }
+                        </a>
                     </td>
                     <td>@Model[i].CreateTime</td>
                     <td>@Model[i].ModifyTime</td> 
@@ -43,3 +49,5 @@
         </tbody>
     </table>
 </div>
+
+<script type="text/javascript" src="~/Components/ComArticles/Scripts/ArticlesListScript.js"></script>

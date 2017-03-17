@@ -35,5 +35,10 @@ namespace ComArticles
         {
             return View("~/Components/ComArticles/Views/Admin/ArticleEdit.cshtml");
         }
+
+        public ActionResult ChangePublishedArticleState(String alias)
+        {
+            return Json("[]");
+        }
     }
 }

@@ -1,0 +1,12 @@
+﻿.article-list-published{
+    width: 20px;
+    height: 20px;
+}
+
+.published-true{
+    background-image: url("/Components/ComArticles/Content/published-true.png");
+}
+
+.published-false{
+    background-image: url("/Components/ComArticles/Content/published-false.png");
+}
