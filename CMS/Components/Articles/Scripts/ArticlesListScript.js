@@ -1,10 +1,11 @@
 ﻿$(document).ready(new function () {
     $(".changeArticleStatusLink").bind("click", function (event) {
-        var alias = $(this).attr("data-alias");
-        var currentPublished = $(this).attr("data-published").toLowerCase() == "true";
-        var imgChild = $(this).find("img");
+        var selectedElement = $(this);
+        var alias = selectedElement.attr("data-alias");
+        var currentPublished = selectedElement.attr("data-published").toLowerCase() == "true";
+        var imgChild = selectedElement.find("img");
 
-        changeArticleState($(this), imgChild, !currentPublished);
+        changeArticleState(selectedElement, imgChild, !currentPublished);
 
         $.ajax({
             type: "POST",
@@ -13,12 +14,12 @@
             success: function (data) {
                 if (JSON.parse(data).result != "Success")
                 {
-                    changeArticleState($(this), imgChild, currentPublished);
+                    changeArticleState(selectedElement, imgChild, currentPublished);
                     alert(data);
                 }
             },
             error: function () {
-                changeArticleState($(this), imgChild, currentPublished);
+                changeArticleState(selectedElement, imgChild, currentPublished);
                 alert("AJAX error");
             }
         });
@@ -37,9 +38,10 @@
             data: "alias=" + alias,
             success: function (data) {
                 if (JSON.parse(data).result != "Success") {
-                    removeArticle(selectedElement);
                     alert(data);
                 }
+
+                removeArticle(selectedElement);
             },
             error: function () {
                 showArticle(selectedElement);
