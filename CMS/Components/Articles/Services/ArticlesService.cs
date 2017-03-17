@@ -36,5 +36,17 @@ namespace ComArticles.Services
         {
             return db.Set<ArticleModel>().ToList();
         }
+
+        public bool RemoveArticle(String alias)
+        {
+            var article = db.Set<ArticleModel>().FirstOrDefault(p => p.Alias == alias);
+            if (article == null)
+                return false;
+
+            db.Set<ArticleModel>().Remove(article);
+            db.Save();
+
+            return true;
+        }
     }
 }

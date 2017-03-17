@@ -47,5 +47,17 @@ namespace ComArticles
 
             return Json("{ \"result\": \"Success\" }");
         }
+
+        public ActionResult RemoveArticle(String alias)
+        {
+            if (!articlesService.Exist(alias))
+                return Json("{ \"result\": \"Alias not exist\" }");
+
+            var result = articlesService.RemoveArticle(alias);
+            if (!result)
+                return Json("{ \"result\": \"Undefined error\" }");
+
+            return Json("{ \"result\": \"Success\" }");
+        }
     }
 }
