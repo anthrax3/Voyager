@@ -13,6 +13,6 @@ namespace CMS.Core.Components
         String Name { get; set; }
         bool SetupDatabase(DbModelBuilder builder);
         void SetupUnity(IUnityContainer container);
-        void ReceiveMessage(Message message);
+        String ReceiveMessage(Message message);
     }
 }

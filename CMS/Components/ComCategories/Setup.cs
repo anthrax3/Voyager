@@ -28,9 +28,9 @@ namespace ComCategories
             container.RegisterType<ICategoriesService, CategoriesService>();
         }
 
-        public void ReceiveMessage(Message message)
+        public String ReceiveMessage(Message message)
         {
-
+            return "{ 'result': 'ok' }";
         }
     }
 }

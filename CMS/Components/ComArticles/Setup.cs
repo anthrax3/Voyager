@@ -30,9 +30,9 @@ namespace ComArticles
             container.RegisterType<IArticlesService, ArticlesService>();
         }
 
-        public void ReceiveMessage(Message message)
+        public String ReceiveMessage(Message message)
         {
-
+            return "{ 'result': 'ok' }";
         }
     }
 }

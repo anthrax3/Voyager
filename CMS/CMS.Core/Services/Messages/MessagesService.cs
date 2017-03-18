@@ -25,5 +25,15 @@ namespace CMS.Core.Services.Messages
             component.ReceiveMessage(message);
             return true;
         }
+
+        public String RequestData(Message message)
+        {
+            var component = componentsLoader.GetComponent(message.Receiver);
+            if (component != null)
+                return "{ 'result': 'error' }";
+
+            var result = component.ReceiveMessage(message);
+            return result;
+        }
     }
 }
