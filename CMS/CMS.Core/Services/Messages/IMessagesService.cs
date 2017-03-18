@@ -8,5 +8,6 @@ namespace CMS.Core.Services.Messages
 {
     public interface IMessagesService
     {
+        bool SendMessage(Message message);
     }
 }

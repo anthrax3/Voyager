@@ -91,6 +91,7 @@
     <Compile Include="Services\Log\ILoggerService.cs" />
     <Compile Include="Services\Log\NLogLogger.cs" />
     <Compile Include="Services\Messages\IMessagesService.cs" />
+    <Compile Include="Services\Messages\Message.cs" />
     <Compile Include="Services\Messages\MessagesService.cs" />
     <Compile Include="Services\Positions\IPositionsService.cs" />
     <Compile Include="Services\Positions\PositionsService.cs" />

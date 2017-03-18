@@ -73,7 +73,7 @@ namespace CMS.Core.Services.ComponentsLoader
             for(int i=0; i<components.Count; i++)
             {
                 components[i].SetupUnity(container);
-                components[i].RegisterMessagesHandler(messagesService);
+                components[i].RegisterMessagesReceiver(messagesService);
             }
         }
     }

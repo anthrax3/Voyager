@@ -30,7 +30,7 @@ namespace ComArticles
             container.RegisterType<IArticlesService, ArticlesService>();
         }
 
-        public void RegisterMessagesHandler(IMessagesService messagesService)
+        public void ReceiveMessage(Message message)
         {
 
         }

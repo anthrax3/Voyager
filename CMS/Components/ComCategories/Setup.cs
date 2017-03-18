@@ -28,7 +28,7 @@ namespace ComCategories
             container.RegisterType<ICategoriesService, CategoriesService>();
         }
 
-        public void RegisterMessagesHandler(IMessagesService messagesService)
+        public void ReceiveMessage(Message message)
         {
 
         }
