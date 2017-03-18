@@ -8,6 +8,7 @@ using CMS.Core.Components;
 using System.IO;
 using System.Web.Compilation;
 using Microsoft.Practices.Unity;
+using CMS.Core.Services.Messages;
 
 namespace CMS.Core.Services.ComponentsLoader
 {
@@ -67,11 +68,12 @@ namespace CMS.Core.Services.ComponentsLoader
             return components;
         }
 
-        public void InitComponents(IUnityContainer container)
+        public void InitComponents(IUnityContainer container, IMessagesService messagesService)
         {
             for(int i=0; i<components.Count; i++)
             {
                 components[i].SetupUnity(container);
+                components[i].RegisterMessagesHandler(messagesService);
             }
         }
     }

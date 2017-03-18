@@ -10,6 +10,7 @@ using ComArticles.Models;
 using CMS.Core.Services.ComponentsManager;
 using Microsoft.Practices.Unity;
 using ComArticles.Services;
+using CMS.Core.Services.Messages;
 
 namespace ComArticles
 {
@@ -27,6 +28,11 @@ namespace ComArticles
         public void SetupUnity(IUnityContainer container)
         {
             container.RegisterType<IArticlesService, ArticlesService>();
+        }
+
+        public void RegisterMessagesHandler(IMessagesService messagesService)
+        {
+
         }
     }
 }

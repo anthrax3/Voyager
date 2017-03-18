@@ -1,4 +1,5 @@
 ﻿using CMS.Core.Components;
+using CMS.Core.Services.Messages;
 using ComCategories.Models;
 using ComCategories.Services;
 using Microsoft.Practices.Unity;
@@ -25,6 +26,11 @@ namespace ComCategories
         public void SetupUnity(IUnityContainer container)
         {
             container.RegisterType<ICategoriesService, CategoriesService>();
+        }
+
+        public void RegisterMessagesHandler(IMessagesService messagesService)
+        {
+
         }
     }
 }

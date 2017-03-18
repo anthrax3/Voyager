@@ -1,6 +1,7 @@
 ﻿using CMS.Core;
 using CMS.Core.Services.ComponentsLoader;
 using CMS.Core.Services.Log;
+using CMS.Core.Services.Messages;
 using CMS.Core.Services.Templates;
 using CMS.Web;
 using CMS.Web.App_Start;
@@ -22,6 +23,8 @@ namespace CMS.Web
     {
         static readonly IComponentsLoaderService componentsLoaderService =
             UnityConfig.GetConfiguredContainer().Resolve<IComponentsLoaderService>();
+        static readonly IMessagesService messagesService =
+            UnityConfig.GetConfiguredContainer().Resolve<IMessagesService>();
 
         protected void Application_Start()
         {
@@ -35,7 +38,7 @@ namespace CMS.Web
 
             var unityContainer = UnityConfig.GetConfiguredContainer();
             componentsLoaderService.LoadComponents();
-            componentsLoaderService.InitComponents(unityContainer);
+            componentsLoaderService.InitComponents(unityContainer, messagesService);
 
             //Web bootstrap
             var webBootstrap = unityContainer.Resolve<WebBootstrap>();

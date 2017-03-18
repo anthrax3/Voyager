@@ -3,6 +3,7 @@ using CMS.Core.Services.AdminMenu;
 using CMS.Core.Services.ComponentsLoader;
 using CMS.Core.Services.ComponentsManager;
 using CMS.Core.Services.Log;
+using CMS.Core.Services.Messages;
 using CMS.Core.Services.Positions;
 using CMS.Core.Services.Templates;
 using Microsoft.Practices.Unity;
@@ -23,6 +24,8 @@ namespace CMS.Core.Services
 
         public void RegisterCoreDependencies(IUnityContainer container, String rootPath)
         {
+            container.RegisterType<IMessagesService, MessagesService>(
+                new ContainerControlledLifetimeManager());
             container.RegisterType<ILoggerService, NLogLogger>();
             container.RegisterType<IDatabaseContext, DatabaseContext>();
             container.RegisterType<ITemplatesService, TemplatesService>();
