@@ -13,5 +13,6 @@ namespace ComArticles.Services
         bool Exist(String alias);
         bool ChangeArticleState(String alias, bool published);
         bool RemoveArticle(String alias);
+        ArticleModel GetArticle(String alias);
     }
 }

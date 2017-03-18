@@ -48,5 +48,10 @@ namespace ComArticles.Services
 
             return true;
         }
+
+        public ArticleModel GetArticle(String alias)
+        {
+            return db.Set<ArticleModel>().FirstOrDefault(p => p.Alias == alias);
+        }
     }
 }

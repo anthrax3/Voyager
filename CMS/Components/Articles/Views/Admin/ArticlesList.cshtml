@@ -26,7 +26,7 @@
                         @Html.ActionLink(Model[i].Title, "ComponentView", "Home", 
                                         new { targetController = "AdminArticles",
                                               targetAction = "ArticleEdit",
-                                              optionalData = Model[i].Alias,
+                                              optionalData = "{ \"alias\": \"" + Model[i].Alias + "\" }",
                                               area = "Administrator"
                         }, null)
                     </td>

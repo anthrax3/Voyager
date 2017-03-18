@@ -1,6 +1,7 @@
 ﻿using ComArticles.Models;
 using ComArticles.Services;
 using ComArticles.ViewModels;
+using Newtonsoft.Json;
 using Omu.ValueInjecter;
 using System;
 using System.Collections.Generic;
@@ -31,9 +32,14 @@ namespace ComArticles
             return View("~/Components/ComArticles/Views/Admin/ArticlesList.cshtml", viewModelList);
         }
 
-        public ActionResult ArticleEdit(String alias)
+        public ActionResult ArticleEdit(String optionalData)
         {
-            return View("~/Components/ComArticles/Views/Admin/ArticleEdit.cshtml");
+            var parsedData = JsonConvert.DeserializeObject<Dictionary<string, string>>(optionalData);
+            var alias = parsedData["alias"];
+            var articleModel = articlesService.GetArticle(alias);
+            var viewModel = new ArticleViewModel().InjectFrom(articleModel);
+
+            return View("~/Components/ComArticles/Views/Admin/ArticleEdit.cshtml", viewModel);
         }
 
         public ActionResult ChangePublishedArticleState(String alias, bool published)

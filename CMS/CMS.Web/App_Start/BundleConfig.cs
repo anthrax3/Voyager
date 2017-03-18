@@ -19,7 +19,7 @@ namespace CMS.Web
                         "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/editor").Include(
-                        "~/Areas/Administrator/Scripts/tinymce/tinymce.js"));
+                        "~/Scripts/tinymce/tinymce.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/admin").Include(
                         "~/Areas/Administrator/Scripts/custom.js"));
