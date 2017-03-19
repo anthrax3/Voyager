@@ -1,4 +1,6 @@
-﻿using CMS.Core.DB;
+﻿using CMS.Core.Components;
+using CMS.Core.DB;
+using CMS.Core.Services.Messages;
 using ComArticles.Models;
 using System;
 using System.Collections.Generic;
@@ -11,9 +13,12 @@ namespace ComArticles.Services
     internal class ArticlesService : IArticlesService
     {
         IDatabaseContext db = null;
-        public ArticlesService(IDatabaseContext db)
+        IMessagesService messagesService = null;
+
+        public ArticlesService(IDatabaseContext db, IMessagesService messagesService)
         {
             this.db = db;
+            this.messagesService = messagesService;
         }
 
         public bool ChangeArticleState(string alias, bool published)
@@ -34,6 +39,14 @@ namespace ComArticles.Services
 
         public List<ArticleModel> GetAllArticles()
         {
+            var message = new Message()
+            {
+                Receiver = "ComCategories",
+                SendTime = DateTime.Now,
+                Value = "hello"
+            };
+
+            var test = messagesService.RequestData(message);
             return db.Set<ArticleModel>().ToList();
         }
 

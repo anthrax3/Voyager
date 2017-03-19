@@ -29,7 +29,7 @@ namespace CMS.Core.Services.Messages
         public String RequestData(Message message)
         {
             var component = componentsLoader.GetComponent(message.Receiver);
-            if (component != null)
+            if (component == null)
                 return "{ 'result': 'error' }";
 
             var result = component.ReceiveMessage(message);
