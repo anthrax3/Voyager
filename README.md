@@ -1,7 +1,8 @@
 # Voyager
 
 Currently status: WIP
-Finished:
+
+# Finished:
  - basic structure of the CMS
  - templates
  - dynamic components
