@@ -2,9 +2,9 @@
 
 Currently status: WIP
 
-# Finished:
+# Finished
  - basic structure of the CMS
  - templates
- - dynamic components
+ - dynamic loaded components
  - service for communication between components
  - example component (articles)
