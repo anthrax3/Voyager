@@ -1,6 +1,6 @@
 # Voyager
 
-Currently status: WIP
+Current status: WIP
 
 # Finished
  - basic structure of the CMS
